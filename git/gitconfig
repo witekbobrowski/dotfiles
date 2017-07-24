@@ -1,0 +1,15 @@
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[user]
+	name = witekbobrowski
+	email = witek@bobrowski.com.pl
+[color]
+	ui = auto
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	cim = commit -m
