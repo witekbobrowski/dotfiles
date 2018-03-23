@@ -12,4 +12,11 @@
 	br = branch
 	ci = commit
 	st = status
+	md = merge develop
+	mt = mergetool
+	mc = merge --continue
 	cim = commit -m
+[merge]
+	tool = kdiff3
+[mergetool "kdiff3"]
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
