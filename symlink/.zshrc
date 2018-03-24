@@ -1,6 +1,10 @@
 # oh-my-zsh
 export ZSH=/Users/witekbobrowski/.oh-my-zsh
 
+# path
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
 # Themes https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="cobalt2"
 

@@ -11,11 +11,11 @@
 	co = checkout
 	br = branch
 	ci = commit
+	cim = commit -m
 	st = status
 	md = merge develop
 	mt = mergetool
 	mc = merge --continue
-	cim = commit -m
 [merge]
 	tool = kdiff3
 [mergetool "kdiff3"]
