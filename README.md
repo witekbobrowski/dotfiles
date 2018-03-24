@@ -28,8 +28,8 @@ During the development of this repository I have been highly inspired by the fol
 
 This configuration runs on the following machines:
 
-- 🖥 **5K iMac** `27'` `Late 2014` `4 GHz i7` `8 GB 1600 MHz DDR3`
-- 💻 **MacBook Air** `13'` `Early 2015` `1.6 GHz i5` `8 GB 1600 MHz DDR3`
+- 🖥 **5K iMac** `27'` `Late 2014` `4 GHz i7` `8 GB 1600 MHz DDR3` `R9 M295X`
+- 💻 **MacBook Air** `13'` `Early 2015` `1.6 GHz i5` `8 GB 1600 MHz DDR3` `Intel HD 1600`
 
 # Usage
 
@@ -53,7 +53,8 @@ For apps on the other hand, just look for what you really need and then install 
 
 # Contents
 
-```.
+```
+.
 ├── README.md
 ├── install.sh
 ├── apps
@@ -64,10 +65,13 @@ For apps on the other hand, just look for what you really need and then install 
 │   ├── Yarnfile
 │   └── apps.sh
 ├── defaults
-│   └── terminal.sh
+│   ├── terminal.sh
+│   └── wallpaper.sh
 ├── misc
-│   └── iterm2
-│       └── com.googlecode.iterm2.plist
+│   ├── iterm2
+│   │   └── com.googlecode.iterm2.plist
+│   └── wallpaper
+│       └── mimirobson.png
 └── symlink
     ├── .gitconfig
     ├── .phoenix.js
