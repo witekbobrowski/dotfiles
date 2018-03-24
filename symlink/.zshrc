@@ -1,5 +1,5 @@
 # oh-my-zsh
-export ZSH=/Users/witek/.oh-my-zsh
+export ZSH=/Users/witekbobrowski/.oh-my-zsh
 
 # path
 export PATH="/usr/local/bin:$PATH"
