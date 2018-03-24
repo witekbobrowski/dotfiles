@@ -1,5 +1,5 @@
 # oh-my-zsh
-export ZSH=/Users/witekbobrowski/.oh-my-zsh
+export ZSH=/Users/witek/.oh-my-zsh
 
 # path
 export PATH="/usr/local/bin:$PATH"
@@ -30,7 +30,13 @@ alias jn="jupyter notebook"
 alias xcode="open -a Xcode"
 alias purgedd='rm -rf ~/Library/Developer/Xcode/DerivedData/*'
 
+# lc on cd
 function chpwd() {
     emulate -L zsh
     colorls -a
+}
+
+# Update all Wallpapers
+function wallpaper() {
+    sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$1'" && killall Dock
 }
