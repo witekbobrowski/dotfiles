@@ -43,8 +43,7 @@ For apps on the other hand, just look for what you really need and then install 
 
 ## Contents
 
-```
-.
+```.
 ├── README.md
 ├── install.sh
 ├── apps
@@ -52,16 +51,18 @@ For apps on the other hand, just look for what you really need and then install 
 │   ├── Caskfile
 │   ├── Gemfile
 │   ├── Masfile
-│   └── Yarnfile
+│   ├── Yarnfile
+│   └── apps.sh
 ├── defaults
 │   └── terminal.sh
-├── miscellaneous
+├── misc
 │   └── iterm2
 │       └── com.googlecode.iterm2.plist
 └── symlink
     ├── .gitconfig
     ├── .phoenix.js
-    └── .zshrc
+    ├── .zshrc
+    └── symlink.sh
 ```
 
 Obviously these is a lot to be done here. I will try to create `issue` for every major feature or task that I want to implement in the future.
