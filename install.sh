@@ -2,6 +2,11 @@
 
 CURRENT_DIR="$( cd $( dirname "${BASH_SOURCE[0]}" ) && pwd)"
 
+# Run scripts with default settings
+DEFAULTS_DIR=$CURRENT_DIR/defaults
+
+sh $DEFAULTS_DIR/terminal.sh
+
 # Create symbolic links for the dotfiles listed in symlink directory
 SYMLINK_DIR=$CURRENT_DIR/symlink
 

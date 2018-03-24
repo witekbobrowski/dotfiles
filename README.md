@@ -53,6 +53,11 @@ For apps on the other hand, just look for what you really need and then install 
 │   ├── Gemfile
 │   ├── Masfile
 │   └── Yarnfile
+├── defaults
+│   └── terminal.sh
+├── miscellaneous
+│   └── iterm2
+│       └── com.googlecode.iterm2.plist
 └── symlink
     ├── .gitconfig
     ├── .phoenix.js
