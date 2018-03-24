@@ -8,8 +8,6 @@ export PATH="/usr/local/sbin:$PATH"
 # Themes https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="cobalt2"
 
-ENABLE_CORRECTION="true"
-
 # Plugins
 plugins=(git zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
@@ -20,6 +18,9 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='vim'
 fi
+
+# Configurating thefuck
+eval $(thefuck --alias)
 
 # Aliases
 alias zshconfig="nvim ~/.zshrc"
