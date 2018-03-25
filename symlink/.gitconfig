@@ -13,6 +13,7 @@
 	ci = commit
 	cim = commit -m
 	st = status
+    s = status --short
 	md = merge develop
 	mt = mergetool
 	mc = merge --continue
@@ -20,3 +21,6 @@
 	tool = kdiff3
 [mergetool "kdiff3"]
 	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+[pager]
+    diff = "diff-so-fancy | less --tabs=4 -RFX"
+    show = "diff-so-fancy | less --tabs=4 -RFX"
