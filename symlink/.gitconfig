@@ -1,26 +1,35 @@
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
 [user]
-	name = witekbobrowski
-	email = witek@bobrowski.com.pl
+    name = Witek Bobrowski
+    email = witek@bobrowski.com.pl
+[github]
+    user = witekbobrowski
 [color]
-	ui = auto
+    ui = auto
 [alias]
-	co = checkout
-	br = branch
-	ci = commit
-	cim = commit -m
-	st = status
+    co = checkout
+    br = branch
+    ci = commit
+    cim = commit -m
+    st = status
     s = status --short
-	md = merge develop
-	mt = mergetool
-	mc = merge --continue
+    md = merge develop
+    mt = mergetool
+    mc = merge --continue
+    l = log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%an%C(reset) - %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    count = shortlog -sn
 [merge]
-	tool = kdiff3
+    tool = kdiff3
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
 [mergetool "kdiff3"]
-	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+    path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
 [pager]
     diff = "diff-so-fancy | less --tabs=4 -RFX"
     show = "diff-so-fancy | less --tabs=4 -RFX"
