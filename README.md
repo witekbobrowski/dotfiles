@@ -79,7 +79,7 @@ For apps on the other hand, just look for what you really need and then install 
     └── symlink.sh
 ```
 
-Obviously these is a lot to be done here. I will try to create `issue` for every major feature or task that I want to implement in the future.
+Obviously there is a lot to be done here. I will try to create `issue` for every major feature or task that I want to implement in the future.
 
 # Credits
 
