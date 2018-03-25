@@ -22,7 +22,8 @@ Fast forward to early 2018, after seeing so many great dotfile-repositories I ha
 
 During the development of this repository I have been highly inspired by the following gems:
 
-- 💎 [eivindml/dotfiles](https://github.com/eivindml/dotfiles)
+- 💠 [eivindml/dotfiles](https://github.com/eivindml/dotfiles)
+- 💎 [nicknisi/dotfiles](https://github.com/nicknisi/dotfiles)
 
 ... and the [r/unixporn](https://www.reddit.com/r/unixporn/)
 
@@ -84,6 +85,7 @@ Obviously there is a lot to be done here. I will try to create `issue` for every
 # Credits
 
 - Repository structure and setup approach [eivindml](https://github.com/eivindml)
+- Some gitconfigs and macOS defaults [nicknisi](https://github.com/nicknisi)
 - Wallpaper by [Miranda Robson](http://www.mimirobson.tumblr.com)
 
 ✨ Thank you! ✨
