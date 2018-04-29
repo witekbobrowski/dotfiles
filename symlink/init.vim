@@ -7,6 +7,14 @@ call plug#begin()
 Plug 'w0rp/ale'
 " A light and configurable statusline/tabline plugin
 Plug 'itchyny/lightline.vim'
+" Vim runtime files for Swift
+Plug 'keith/swift.vim'
+" Python syntax highlighting
+Plug 'vim-python/python-syntax'
+" Text filtering and alignment
+Plug 'godlygeek/tabular'
+" Markdown Vim Mode
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 "
