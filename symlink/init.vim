@@ -3,7 +3,10 @@
 "
 
 call plug#begin()
+" Asynchronous Lint Engine
 Plug 'w0rp/ale'
+" A light and configurable statusline/tabline plugin
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 "
@@ -33,3 +36,6 @@ set colorcolumn=80
 
 " Stop vim from wrapping long lines.
 set nowrap
+
+" Hide --INSERT-- from status line.
+set noshowmode
