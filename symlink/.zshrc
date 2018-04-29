@@ -1,5 +1,5 @@
 # oh-my-zsh
-export ZSH=/Users/witekbobrowski/.oh-my-zsh
+export ZSH=/Users/witek/.oh-my-zsh
 
 # path
 export PATH="/usr/local/bin:$PATH"
@@ -23,7 +23,8 @@ fi
 eval $(thefuck --alias)
 
 # Aliases
-alias zshconfig="nvim ~/.zshrc"
+alias zshrc="nvim ~/.zshrc"
+alias vimrc="nvim ~/.config/nvim/init.vim"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias lc='colorls'
 alias jn="jupyter notebook"
