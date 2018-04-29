@@ -23,12 +23,16 @@ fi
 eval $(thefuck --alias)
 
 # Aliases
+alias gitrc="nvim ~/.gitconfig"
 alias zshrc="nvim ~/.zshrc"
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
+
+alias nv='nvim'
 alias lc='colorls'
 alias jn="jupyter notebook"
 alias xcode="open -a Xcode"
+
 alias purgedd='rm -rf ~/Library/Developer/Xcode/DerivedData/*'
 
 # lc on cd
