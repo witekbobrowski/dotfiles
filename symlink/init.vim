@@ -15,6 +15,8 @@ Plug 'vim-python/python-syntax'
 Plug 'godlygeek/tabular'
 " Markdown Vim Mode
 Plug 'plasticboy/vim-markdown'
+" Instant Markdown previews from VIm!
+Plug 'suan/vim-instant-markdown'
 call plug#end()
 
 "
@@ -43,7 +45,18 @@ set tabstop=4
 set colorcolumn=80
 
 " Stop vim from wrapping long lines.
-set nowrap
+set wrap
 
 " Hide --INSERT-- from status line.
 set noshowmode
+
+
+"
+" PLUGIN CONFIGS
+"
+
+
+" suan/vim-instant-markdown
+
+" Disable instant refresh
+let g:instant_markdown_slow = 1
