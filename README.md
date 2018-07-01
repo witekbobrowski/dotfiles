@@ -92,6 +92,7 @@ Obviously there is a lot to be done here. I will try to create `issue` for every
 - General guidance and support on ricing award goes to my buddy [vyzyv](https://github.com/vyzyv)
 - Repository structure and setup approach [eivindml](https://github.com/eivindml)
 - Some gitconfigs and macOS defaults [nicknisi](https://github.com/nicknisi)
+- Amazing set of macos defaults [kevinSuttle](https://github.com/kevinSuttle/macOS-Defaults)
 - Wallpaper by [Miranda Robson](http://www.mimirobson.tumblr.com)
 
 ✨ Thank you! ✨
