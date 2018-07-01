@@ -1,4 +1,5 @@
 mas
+bat
 git
 diff-so-fancy
 tmux
@@ -11,6 +12,7 @@ python3
 thefuck
 subliminal
 swiftlint
+carthage
 lolcat
 cowsay
 cmatrix

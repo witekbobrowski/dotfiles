@@ -6,18 +6,17 @@ DIR="$( cd $( dirname "${BASH_SOURCE[0]}" ) && pwd)"
 echo "Creating symbolic links for files from $DIR"
 
 ZSH=".zshrc"
-echo "🔗  $ZSH"
+echo "🔗 $ZSH"
 ln -f $DIR/$ZSH ~/$ZSH
 
 NVIM="init.vim"
-echo "🔗  $NVIM" 
+echo "🔗 $NVIM"
 ln -f $DIR/$NVIM ~/.config/nvim/$NVIM
 
 GIT=".gitconfig"
-echo "🔗  $GIT"
+echo "🔗 $GIT"
 ln -f $DIR/$GIT ~/$GIT
 
 PHOENIX=".phoenix.js"
-echo "🔗  $PHOENIX"
+echo "🔗 $PHOENIX"
 ln -f $DIR/$PHOENIX ~/$PHOENIX
-

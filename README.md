@@ -66,7 +66,11 @@ For apps on the other hand, just look for what you really need and then install 
 │   ├── Yarnfile
 │   └── apps.sh
 ├── defaults
-│   ├── terminal.sh
+│   ├── iterm2.sh
+│   ├── macos.sh
+│   ├── photos.sh
+│   ├── safari.sh
+│   ├── transmission.sh
 │   └── wallpaper.sh
 ├── misc
 │   ├── iterm2

@@ -1,12 +1,11 @@
 #!/bin/bash
 
+# iTerm2.app
+echo "🛠 Configuring iTerm2.app"
+
 DIR="$( cd $( dirname "${BASH_SOURCE[0]}" ) && pwd)"
 REPO_DIR="$( cd $( dirname $DIR ) && pwd)"
 ITERM_DIR=$REPO_DIR/misc/iterm2
-
-# Change users shell to zsh
-echo "🛠 Setting default shell to zsh"
-chsh -s /bin/zsh
 
 # Specify the preferences directory
 echo "⛓  Setting default path to iTerm2 config plist file at $ITERM_DIR"
