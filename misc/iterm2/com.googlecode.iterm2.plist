@@ -2087,7 +2087,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1445 141 445 77 0 0 2560 1440 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>972 944 616 174 0 0 2560 1418 </string>
+	<string>972 943 616 174 0 0 2560 1418 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>2031 874 400 129 0 0 2560 1440 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -2099,7 +2099,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>230 856 592 584 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>60 42 1250 682 0 0 2560 1418 </string>
+	<string>655 376 1250 682 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1969 1021 570 377 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 10</key>
@@ -2124,6 +2124,10 @@
 	<string>490 25 575 350 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 9</key>
 	<string>511 1007 575 350 0 0 2560 1440 </string>
+	<key>NeverWarnAboutShortLivedSessions_43FCCD73-0651-4F46-A99C-86E4092096FE</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_43FCCD73-0651-4F46-A99C-86E4092096FE_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -4505,7 +4509,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-05-17T09:36:50Z</date>
+	<date>2018-06-22T10:44:16Z</date>
 	<key>SUSkippedVersion</key>
 	<string>3.1.6beta4</string>
 	<key>SavePasteHistory</key>

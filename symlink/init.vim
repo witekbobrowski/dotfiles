@@ -5,30 +5,56 @@
 call plug#begin()
 " Asynchronous Lint Engine
 Plug 'w0rp/ale'
+" Asynchronous completion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " A light and configurable statusline/tabline plugin
 Plug 'itchyny/lightline.vim'
-" Vim runtime files for Swift
-Plug 'keith/swift.vim'
-" Python syntax highlighting
-Plug 'vim-python/python-syntax'
 " Text filtering and alignment
 Plug 'godlygeek/tabular'
+" Smooth jumping
+Plug 'yuttie/comfortable-motion.vim'
+" Parenthisis highlighting enhanced
+" Plug 'eapache/rainbow_parentheses.vim'
+
+"
+" Swift
+"
+" Vim runtime files for Swift
+Plug 'keith/swift.vim'
+" Swift code complition
+Plug 'landaire/deoplete-swift'
+"
+
+"
+" Python
+" 
+" Python syntax highlighting
+Plug 'vim-python/python-syntax'
+"
+
+"
+" Jupyter Notebook
+"
+" Enchanced jupyter notebook edition
+Plug 'szymonmaszke/vimpyter'
+"
+
+" Markdown
+"
 " Markdown Vim Mode
 Plug 'plasticboy/vim-markdown'
 " Instant Markdown previews from VIm!
 Plug 'suan/vim-instant-markdown'
-" Enchanced jupyter notebook edition
-Plug 'szymonmaszke/vimpyter'
-" Smooth jumping
-Plug 'yuttie/comfortable-motion.vim'
-" Parenthisis highlighting enhanced
-Plug 'eapache/rainbow_parentheses.vim'
+"
+
 call plug#end()
 
 "
 " GENERAL SETTINGS
 "
 
+" Set font to Apple San Francisco Mono spaced
+set guifont=SF-Mono-Regular\ 14
 " Display line numbers of the left margin.
 set number
 " Display relative (to current one) line numbers on margin.
@@ -49,6 +75,14 @@ set expandtab
 set tabstop=4
 " Set column on 80th char lenght.
 set colorcolumn=80
+" Color column 80th and from 120 to 900 (warning/danger zone)
+let &colorcolumn="80,".join(range(120,999),",")
+" Set color for columns above 
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+" Highlight current line
+set cursorline
+" Set color for current line highlighting
+highlight CursorLine cterm=NONE ctermbg=235 guibg=#2c2d27 
 " Stop vim from wrapping long lines.
 set wrap
 " Hide --INSERT-- from status line.
@@ -57,6 +91,13 @@ set noshowmode
 " set nofoldenable
 " Shared clipboard between vim and os
 set clipboard=unnamedplus
+" Keep at least 3 lines left/right
+set sidescrolloff=3
+" Keep at least 3 lines above/below
+set scrolloff=3
+" Path to python
+let g:python3_host_prog = '/usr/local/bin/neovim3/bin/python'
+
 "
 " MAPPING
 "
@@ -68,47 +109,28 @@ nnoremap <silent><Leader>z :let &foldlevel = &foldlevel==0 ? &foldnestmax : 0<CR
 autocmd Filetype ipynb nnoremap <silent><tab>b :VimpyterInsertPythonBlock<CR>
 autocmd Filetype ipynb nnoremap <silent><tab>j :VimpyterStartJupyter<CR>
 
-let g:vimpyter_color = 1
 
 "
 " PLUGIN CONFIGS
 "
+
+" szymonmaszke/vimpyter {{{
+"
+"
+let g:vimpyter_color = 1
+
+" }}}
+
+" Shougo/deoplete.nvim {{{
+"
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
+" }}}
 
 " suan/vim-instant-markdown {{{
 "
 " Disable instant refresh
 let g:instant_markdown_slow = 1
 
-" }}}
-
-" eapache/rainbow_parentheses.vim {{{
-
-let g:rbpt_colorpairs = [
-      \ ['red',         'RoyalBlue3'],
-      \ ['brown',       'SeaGreen3'],
-      \ ['blue',        'DarkOrchid3'],
-      \ ['gray',        'firebrick3'],
-      \ ['green',       'RoyalBlue3'],
-      \ ['magenta',     'SeaGreen3'],
-      \ ['cyan',        'DarkOrchid3'],
-      \ ['darkred',     'firebrick3'],
-      \ ['brown',       'RoyalBlue3'],
-      \ ['darkblue',    'DarkOrchid3'],
-      \ ['gray',        'firebrick3'],
-      \ ['darkgreen',   'RoyalBlue3'],
-      \ ['darkmagenta', 'SeaGreen3'],
-      \ ['darkcyan',    'DarkOrchid3'],
-      \ ['red',         'firebrick3'],
-      \ ]
-let g:rbpt_max = 15
-let g:rbpt_loadcmd_toggle = 0
-let g:bold_parentheses = 1
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['<','\>'], ['{', '}']]
-
-augroup AutoStartParentheses
-  au VimEnter * RainbowParenthesesToggle
-  au Syntax * RainbowParenthesesLoadRound
-  au Syntax * RainbowParenthesesLoadSquare
-  au Syntax * RainbowParenthesesLoadBraces
-augroup END
 " }}}
