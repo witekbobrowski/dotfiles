@@ -128,6 +128,13 @@ let g:deoplete#enable_at_startup = 1
 
 " }}}
 
+" landaire/deoplete-swift {{{
+"
+" Path to SourceKitten binary 
+let g:deoplete#sources#swift#source_kitten_binary = '/usr/local/bin/sourcekitten'
+
+" }}}
+
 " suan/vim-instant-markdown {{{
 "
 " Disable instant refresh
