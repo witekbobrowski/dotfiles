@@ -155,6 +155,19 @@ let g:instant_markdown_slow = 1
 
 " 'itchyny/lightline.vim' {{{
 "
+let g:lightline = {}
+let g:lightline.mode_map = {
+      \ 'n' : '',
+      \ 'i' : '',
+      \ 'R' : '',
+      \ 'v' : '',
+      \ 'V' : ' ',
+      \ "\<C-v>": ' ',
+      \ 'c' : ' command',
+      \ 's' : ' select',
+      \ 'S' : ' S-LINE',
+      \ 't': '',
+      \}
 let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
@@ -185,19 +198,6 @@ let g:lightline = {
 
 " maximbaz/lightline-ale {{{
 "
-let g:lightline = {}
-" let g:lightline.mode_map = {
-"       \ 'n' : '',
-"       \ 'i' : '',
-"       \ 'R' : '',
-"       \ 'v' : '',
-"       \ 'V' : ' ',
-"       \ "\<C-v>": ' ',
-"       \ 'c' : ' command',
-"       \ 's' : ' select',
-"       \ 'S' : ' S-LINE',
-"       \ 't': '',
-"       \}
 let g:lightline#ale#indicator_warnings = ''
 let g:lightline#ale#indicator_errors = ''
 let g:lightline#ale#indicator_ok = ''
