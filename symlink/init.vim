@@ -9,12 +9,20 @@ Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " A light and configurable statusline/tabline plugin
 Plug 'itchyny/lightline.vim'
+" Linter warnings in statusline
+Plug 'maximbaz/lightline-ale'
 " Text filtering and alignment
 Plug 'godlygeek/tabular'
 " Smooth jumping
 Plug 'yuttie/comfortable-motion.vim'
 " Parenthisis highlighting enhanced
 " Plug 'eapache/rainbow_parentheses.vim'
+" The fancy start screen for Vim.
+Plug 'mhinz/vim-startify'
+" Comment stuff out
+Plug 'tpope/vim-commentary'
+" Git diff in the gutter 
+Plug 'airblade/vim-gitgutter'
 
 "
 " Swift
@@ -22,7 +30,7 @@ Plug 'yuttie/comfortable-motion.vim'
 " Vim runtime files for Swift
 Plug 'keith/swift.vim'
 " Swift code complition
-Plug 'landaire/deoplete-swift'
+Plug 'mitsuse/autocomplete-swift'
 "
 
 "
@@ -95,8 +103,8 @@ set clipboard=unnamedplus
 set sidescrolloff=3
 " Keep at least 3 lines above/below
 set scrolloff=3
-" Path to python
-let g:python3_host_prog = '/usr/local/bin/neovim3/bin/python'
+" Set update time to 250m
+set ut=250
 
 "
 " MAPPING
@@ -123,6 +131,8 @@ let g:vimpyter_color = 1
 
 " Shougo/deoplete.nvim {{{
 "
+" Path to python
+let g:python3_host_prog = '/usr/local/opt/python/bin/python3.7'
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 
@@ -132,6 +142,8 @@ let g:deoplete#enable_at_startup = 1
 "
 " Path to SourceKitten binary 
 let g:deoplete#sources#swift#source_kitten_binary = '/usr/local/bin/sourcekitten'
+" Jump to the first placeholder by typing `<C-k>`.
+autocmd FileType swift imap <buffer> <C-k> <Plug>(autocomplete_swift_jump_to_placeholder)
 
 " }}}
 
@@ -139,5 +151,62 @@ let g:deoplete#sources#swift#source_kitten_binary = '/usr/local/bin/sourcekitten
 "
 " Disable instant refresh
 let g:instant_markdown_slow = 1
+" }}}
 
+" 'itchyny/lightline.vim' {{{
+"
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'filename' ] ],
+      \   'right': [ [ 'percent' ], ['linter_errors', 'linter_warnings', 'linter_ok']]
+      \ },
+      \ 'component_expand': {
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ },
+      \ 'component_type': {
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'LightlineFugitive',
+      \   'readonly': 'LightlineReadonly',
+      \   'modified': 'LightlineModified',
+      \   'filename': 'LightlineFilename',
+      \   'filetype': 'MyFiletype',
+      \   'fileformat': 'MyFileformat',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
+" }}}
+
+" maximbaz/lightline-ale {{{
+"
+let g:lightline = {}
+" let g:lightline.mode_map = {
+"       \ 'n' : '',
+"       \ 'i' : '',
+"       \ 'R' : '',
+"       \ 'v' : '',
+"       \ 'V' : ' ',
+"       \ "\<C-v>": ' ',
+"       \ 'c' : ' command',
+"       \ 's' : ' select',
+"       \ 'S' : ' S-LINE',
+"       \ 't': '',
+"       \}
+let g:lightline#ale#indicator_warnings = ''
+let g:lightline#ale#indicator_errors = ''
+let g:lightline#ale#indicator_ok = ''
+" }}}
+
+" airblade/vim-gitgutter {{{
+"
+"
+let g:gitgutter_terminal_reports_focus=0
+let g:gitgutter_diff_base='HEAD'
+let g:gitgutter_grep = 'rg' 
 " }}}
