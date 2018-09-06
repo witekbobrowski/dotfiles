@@ -23,6 +23,8 @@ Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-commentary'
 " Git diff in the gutter 
 Plug 'airblade/vim-gitgutter'
+" True Sublime Text style multiple selections
+Plug 'terryma/vim-multiple-cursors'
 
 "
 " Swift

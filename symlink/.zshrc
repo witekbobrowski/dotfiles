@@ -4,6 +4,7 @@ export ZSH=/Users/witek/.oh-my-zsh
 # path
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.fastlane/bin:$PATH"
 
 # Themes https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="cobalt2"
