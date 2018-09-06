@@ -17,6 +17,9 @@
     cim = commit -m
     st = status
     s = status --short
+    rb = rebase
+    rd = rebase develop
+    rc = rebase --continue
     md = merge develop
     mt = mergetool
     mc = merge --continue
