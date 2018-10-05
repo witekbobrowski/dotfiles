@@ -51,3 +51,7 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 log "$emoji" "Set bottom right screen corner as put to display to sleep hotkey"
 defaults write com.apple.dock wvous-br-corner -int 10
 defaults write com.apple.dock wvous-br-modifier -int 0
+
+# Disable mouse acceleration
+log "$emoji" "Set mouse acceleration ot -1 to diable it"
+defaults write .GlobalPreferences com.apple.mouse.scaling -1
