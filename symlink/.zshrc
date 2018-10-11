@@ -24,17 +24,31 @@ fi
 eval $(thefuck --alias)
 
 # Aliases
-alias gitrc="nvim ~/.gitconfig"
-alias zshrc="nvim ~/.zshrc"
-alias vimrc="nvim ~/.config/nvim/init.vim"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
 
+### Files
+alias grc="nvim ~/.gitconfig"
+alias zrc="nvim ~/.zshrc"
+alias vrc="nvim ~/.config/nvim/init.vim"
+alias omz="nvim ~/.oh-my-zsh"
+
+### Directories
+alias dev="cd ~/Developer"
+alias devp="cd ~/Developer/personal"
+alias devw="cd ~/Developer/work"
+alias devt="cd ~/Developer/temp"
+alias dotf="cd ~/Developer/personal/dotfiles"
+alias docs="cd ~/Documents"
+alias dwnl="cd ~/Downloads"
+alias dsk="cd ~/Desktop"
+
+### Programs
 alias e='nvim'
 alias lc='colorls'
 alias jn="jupyter notebook"
-alias xcode="open -a Xcode"
 
-alias purgedd='rm -rf ~/Library/Developer/Xcode/DerivedData/*'
+### Commands
+alias pdd='rm -rf ~/Library/Developer/Xcode/DerivedData/*' # Purge DerivedData
+alias gmc= "find . -name '*.orig' -delete" # Clean after git merge
 
 # lc on cd
 function chpwd() {
