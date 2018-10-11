@@ -15,8 +15,6 @@ Plug 'maximbaz/lightline-ale'
 Plug 'godlygeek/tabular'
 " Smooth jumping
 Plug 'yuttie/comfortable-motion.vim'
-" Parenthisis highlighting enhanced
-" Plug 'eapache/rainbow_parentheses.vim'
 " The fancy start screen for Vim.
 Plug 'mhinz/vim-startify'
 " Comment stuff out
@@ -37,7 +35,8 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'keith/swift.vim'
 " Swift code complition
 Plug 'mitsuse/autocomplete-swift'
-"
+" Work with Xcode projects from within Vim
+Plug 'gfontenot/vim-xcode'
 
 "
 " Python
@@ -145,10 +144,9 @@ let g:deoplete#enable_at_startup = 1
 " }}}
 
 " Shougo/neosnippet.vim {{{
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 " }}}
 
 " landaire/deoplete-swift {{{
@@ -157,6 +155,19 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 let g:deoplete#sources#swift#source_kitten_binary = '/usr/local/bin/sourcekitten'
 " Jump to the first placeholder by typing `<C-k>`.
 autocmd FileType swift imap <buffer> <C-k> <Plug>(autocomplete_swift_jump_to_placeholder)
+" }}}
+
+" Plug 'gfontenot/vim-xcode' {{{
+"
+" 
+autocmd FileType swift imap <C-b> :Xbuild<CR>
+autocmd FileType swift nmap <C-b> :Xbuild<CR>
+autocmd FileType swift imap <C-r> :Xrun<CR>
+autocmd FileType swift nmap <C-r> :Xrun<CR>
+autocmd FileType swift imap <C-u> :Xtest<CR>
+autocmd FileType swift nmap <C-u> :Xtest<CR>
+autocmd FileType swift imap <C-c> :Xclean<CR>
+autocmd FileType swift nmap <C-c> :Xclean<CR>
 
 " }}}
 
