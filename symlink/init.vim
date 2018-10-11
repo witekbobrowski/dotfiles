@@ -25,6 +25,10 @@ Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
 " True Sublime Text style multiple selections
 Plug 'terryma/vim-multiple-cursors'
+" The Neosnippet plug-In adds snippet support to Vim
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+
 
 "
 " Swift
@@ -116,8 +120,6 @@ let g:mapleader = "\<Space>"
 nnoremap Z za
 nnoremap z zA
 nnoremap <silent><Leader>z :let &foldlevel = &foldlevel==0 ? &foldnestmax : 0<CR>
-autocmd Filetype ipynb nnoremap <silent><tab>b :VimpyterInsertPythonBlock<CR>
-autocmd Filetype ipynb nnoremap <silent><tab>j :VimpyterStartJupyter<CR>
 
 
 "
@@ -128,6 +130,8 @@ autocmd Filetype ipynb nnoremap <silent><tab>j :VimpyterStartJupyter<CR>
 "
 "
 let g:vimpyter_color = 1
+autocmd Filetype ipynb nnoremap <silent><tab>b :VimpyterInsertPythonBlock<CR>
+autocmd Filetype ipynb nnoremap <silent><tab>j :VimpyterStartJupyter<CR>
 
 " }}}
 
@@ -138,6 +142,13 @@ let g:python3_host_prog = '/usr/local/opt/python/bin/python3.7'
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 
+" }}}
+
+" Shougo/neosnippet.vim {{{
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 " }}}
 
 " landaire/deoplete-swift {{{
