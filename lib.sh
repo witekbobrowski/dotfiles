@@ -2,20 +2,24 @@
 
 # Base logging function
 function log() {
-    echo -e "$1"
+    echo "$1"
 }
 
-# Specialized logging methods
+# Specialized logging functions
+
+function success() {
+    log "💚 $1"
+}
 
 function info() {
-    log "[💚] $1"
+    log "💙 $1"
 }
 
 function warning() {
-    log "[💛] $1"
+    log "💛 $1"
 }
 
 function error() {
-    log "[💔] $1"
+    log "❤️  $1"
 }
 
