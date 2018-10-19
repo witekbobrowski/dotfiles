@@ -108,8 +108,6 @@ set clipboard=unnamedplus
 set sidescrolloff=3
 " Keep at least 3 lines above/below
 set scrolloff=3
-" Set update time to 250m
-set ut=250
 
 "
 " MAPPING
