@@ -2074,34 +2074,18 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-<<<<<<< Updated upstream
 	<string>710 261 445 103 0 0 1440 878 </string>
-=======
-	<string>1101 430 445 77 0 0 2560 1418 </string>
->>>>>>> Stashed changes
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-<<<<<<< Updated upstream
-	<string>972 943 616 174 0 0 2560 1418 </string>
-	<key>NSWindow Frame SUStatusFrame</key>
-	<string>2031 874 400 129 0 0 2560 1440 </string>
-=======
 	<string>412 540 616 174 0 0 1440 878 </string>
->>>>>>> Stashed changes
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>2410 1409 620 392 1440 640 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-<<<<<<< Updated upstream
 	<string>1673 1190 796 473 1440 478 2560 1418 </string>
-	<key>NSWindow Frame iTerm Window 0</key>
-<<<<<<< Updated upstream
-	<string>655 376 1250 682 0 0 2560 1418 </string>
-=======
 	<string>821 847 796 486 0 0 2560 1418 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>230 856 592 584 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>655 402 1250 657 0 0 2560 1418 </string>
->>>>>>> Stashed changes
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1969 1021 570 377 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 10</key>
@@ -2130,11 +2114,9 @@
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_43FCCD73-0651-4F46-A99C-86E4092096FE_selection</key>
 	<integer>0</integer>
-=======
-	<string>2095 847 1250 679 1440 478 2560 1418 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>-309 1081 570 452 -652 900 2560 1417 </string>
->>>>>>> Stashed changes
+	<string>85 380 796 486 0 0 1440 878 </string>
+	<key>NSWindow Frame iTerm Window 0</key>
+	<string>20 62 1400 796 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -4388,8 +4370,16 @@
 	<string>B8366CA3-260E-47BE-9C6D-7AA4A250CAFD</string>
 	<key>NoSyncLastTipTime</key>
 	<real>524645488.80452698</real>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
+	<key>NoSyncSuppressRestartSessionConfirmationAlert</key>
+	<true/>
+	<key>NoSyncSuppressRestartSessionConfirmationAlert_selection</key>
+	<integer>0</integer>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>522675661.22055203</real>
 	<key>NoSyncTipsDisabled</key>
@@ -4452,13 +4442,9 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-<<<<<<< Updated upstream
-	<string>/Users/witek/Developer/personal/dotfiles/misc/iterm2</string>
-=======
 	<string>/Users/witekbobrowski/Developer/personal/dotfiles/misc/iterm2</string>
 	<key>Print In Black And White</key>
 	<true/>
->>>>>>> Stashed changes
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -4478,19 +4464,12 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-	<date>2018-06-22T10:44:16Z</date>
-=======
 	<date>2018-07-13T03:13:46Z</date>
->>>>>>> Stashed changes
 	<key>SUSkippedVersion</key>
 	<string>3.1.6beta4</string>
 	<key>SavePasteHistory</key>
-=======
-	<date>2018-07-02T08:35:07Z</date>
+	<date>2018-09-04T10:57:32Z</date>
 	<key>SUSendProfileInfo</key>
->>>>>>> Stashed changes
 	<false/>
 	<key>SavePasteHistory</key>
 	<false/>
@@ -7238,7 +7217,11 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
+<<<<<<< Updated upstream:symlink/com.googlecode.iterm2.plist
 	<string>3.2.0beta4</string>
+=======
+	<string>3.2.1beta1</string>
+>>>>>>> Stashed changes:misc/iterm2/com.googlecode.iterm2.plist
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
