@@ -6,9 +6,9 @@
 </a>
 </p>
 <p align=center>
-    <a href=""><img alt="OS" src="https://img.shields.io/badge/macOS-High_Sierra-orange.svg"></a>
+    <a href=""><img alt="OS" src="https://img.shields.io/badge/macOS-Mojave-383838.svg"></a>
     <a href=""><img alt="Shell" src="https://img.shields.io/badge/Shell-zsh-blue.svg"></a>
-    <a href=""><img alt="Terminal" src="https://img.shields.io/badge/Terminal-iTerm2-3a3a3a.svg"></a>
+    <a href=""><img alt="Terminal" src="https://img.shields.io/badge/Terminal-iTerm2-dark.svg"></a>
     <a href=""><img alt="Editor" src="https://img.shields.io/badge/Editor-Neovim-green.svg"></a>
     <a href=""><img alt="PM" src="https://img.shields.io/badge/PM-Homebrew-yellow.svg"></a>
 </p>
@@ -59,29 +59,28 @@ For apps on the other hand, just look for what you really need and then install 
 .
 ├── README.md
 ├── install.sh
+├── lib.sh
 ├── apps
-│   ├── Brewfile
-│   ├── Caskfile
-│   ├── Gemfile
-│   ├── Masfile
-│   ├── Yarnfile
-│   └── apps.sh
+│   ├── Brewfile
+│   ├── Caskfile
+│   ├── Gemfile
+│   ├── Masfile
+│   ├── Yarnfile
+│   └── apps.sh
+├── assets
+│   ├── mimirobson.png
+│   └── screenshot.png
 ├── defaults
+│   ├── directories.sh
 │   ├── iterm2.sh
 │   ├── macos.sh
 │   ├── photos.sh
 │   ├── safari.sh
+│   ├── shell.sh
 │   ├── transmission.sh
 │   └── wallpaper.sh
-├── misc
-│   ├── iterm2
-│   │   └── com.googlecode.iterm2.plist
-│   └── wallpaper
-│       └── mimirobson.png
 └── symlink
-    ├── .gitconfig
-    ├── .phoenix.js
-    ├── .zshrc
+    ├── com.googlecode.iterm2.plist
     ├── init.vim
     └── symlink.sh
 ```
