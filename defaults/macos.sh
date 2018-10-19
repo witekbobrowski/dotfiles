@@ -28,6 +28,10 @@ defaults write com.apple.dashboard mcx-disabled -bool true
 log "$emoji Setting Dock size to 32"
 defaults write com.apple.dock tilesize -int 32
 
+# Disable recents section in Dock
+log "$emoji Disable recents section in Dock"
+defaults write com.apple.dock show-recents -bool false
+
 # Don’t show Dashboard as a Space
 log "$emoji Don’t show Dashboard as a Space"
 defaults write com.apple.dock dashboard-in-overlay -bool true
