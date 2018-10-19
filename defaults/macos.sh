@@ -1,16 +1,13 @@
 #!/bin/bash
 
-DIR="$( cd $( dirname "${BASH_SOURCE[0]}" ) && pwd)"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
+# shellcheck source=../lib.sh
 source "$DIR/../lib.sh"
 
-emoji='[⚙️ ]'
+emoji='⚙️ '
 
 # macOS Config
-info "Configuring macOS"
-
-# Change users shell to zsh
-log "$emoji Setting default shell to zsh"
-chsh -s /bin/zsh
+info "Configuring macOS defaults."
 
 # Save screenshots to the Screenshots folder in Downloads
 log "$emoji Setting location for screenshots to ~/Pictures/Screenshots/"
@@ -52,3 +49,6 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 # Disable mouse acceleration
 log "$emoji Set mouse acceleration ot -1 to diable it"
 defaults write .GlobalPreferences com.apple.mouse.scaling -1
+
+# Done configuring macOS defaults
+success "Done configuring macOS defaults!"
