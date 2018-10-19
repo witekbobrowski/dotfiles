@@ -16,6 +16,11 @@ sh "$DIR/defaults/macos.sh"
 
 log "$separator"
 
+# Run script creating directories
+sh "$DIR/defaults/directories.sh"
+
+log "$separator"
+
 # Run script with Photos.app config
 sh "$DIR/defaults/photos.sh"
 
