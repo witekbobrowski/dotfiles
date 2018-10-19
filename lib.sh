@@ -1,8 +1,10 @@
 #!/bin/bash
 
+default_output_device="/dev/tty"
+
 # Base logging function
 function log() {
-    echo "$1"
+    echo "$1" &> $default_output_device
 }
 
 # Specialized logging functions

@@ -1,22 +1,28 @@
 #!/bin/bash
 
-DIR="$( cd $( dirname "${BASH_SOURCE[0]}" ) && pwd)"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
+# shellcheck source=../lib.sh
+source "$DIR/../lib.sh"
+
+emoji='🔗'
 
 # Create symbolic links for the dotfiles from this directory
-echo "Creating symbolic links for files from $DIR"
+info "Creating symbolic links for configuration files."
 
 ZSH=".zshrc"
-echo "🔗 $ZSH"
-ln -f $DIR/$ZSH ~/$ZSH
+log "$emoji Linking $ZSH"
+ln -f "$DIR/$ZSH" "$HOME/$ZSH"
 
 NVIM="init.vim"
-echo "🔗 $NVIM"
-ln -f $DIR/$NVIM ~/.config/nvim/$NVIM
+log "$emoji Linking $NVIM"
+ln -f "$DIR/$NVIM" "$HOME/.config/nvim/$NVIM"
 
 GIT=".gitconfig"
-echo "🔗 $GIT"
-ln -f $DIR/$GIT ~/$GIT
+log "$emoji Linking $GIT"
+ln -f "$DIR/$GIT" "$HOME/$GIT"
 
 PHOENIX=".phoenix.js"
-echo "🔗 $PHOENIX"
-ln -f $DIR/$PHOENIX ~/$PHOENIX
+log "$emoji Linking $PHOENIX"
+ln -f "$DIR/$PHOENIX" "$HOME/$PHOENIX"
+
+success "Done creating symbolic links!"

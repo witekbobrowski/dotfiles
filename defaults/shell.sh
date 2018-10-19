@@ -8,5 +8,5 @@ emoji='🐚'
 
 # Change users shell to zsh
 log "$emoji Setting default shell to zsh"
-chsh -s /bin/zsh
+chsh -s /bin/zsh &> /dev/null
 
