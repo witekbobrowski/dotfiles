@@ -32,7 +32,7 @@ Plug 'Shougo/neosnippet-snippets'
 " Swift
 "
 " Vim plugin for generating docstrings in Swift sources
-Plug 'file://'.expand('~/Developer/personal/vim-swiftdocstring')
+Plug '~/Developer/personal/vim-swiftdocstring'
 " Vim runtime files for Swift
 Plug 'keith/swift.vim'
 " Swift code complition
