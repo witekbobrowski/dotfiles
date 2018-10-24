@@ -1,3 +1,5 @@
+scriptencoding utf8
+
 "
 " PLUGINS
 "
@@ -26,6 +28,8 @@ Plug 'terryma/vim-multiple-cursors'
 " The Neosnippet plug-In adds snippet support to Vim
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+" Makes vim interrupt you less
+Plug 'vim-utils/vim-interruptless'
 
 
 "
@@ -124,6 +128,9 @@ nnoremap <silent><Leader>z :let &foldlevel = &foldlevel==0 ? &foldnestmax : 0<CR
 "
 " PLUGIN CONFIGS
 "
+"
+" Generate docstring for current context
+autocmd Filetype swift nnoremap <silent><tab>/ :SwiftDocstringCurrent<CR>
 
 " szymonmaszke/vimpyter {{{
 "
