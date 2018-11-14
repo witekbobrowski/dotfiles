@@ -30,6 +30,8 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 " Makes vim interrupt you less
 Plug 'vim-utils/vim-interruptless'
+" Run your tests at the speed of thought
+Plug 'janko-m/vim-test'
 
 
 "
