@@ -64,8 +64,8 @@ Plug 'szymonmaszke/vimpyter'
 "
 " Markdown Vim Mode
 Plug 'plasticboy/vim-markdown'
-" Instant Markdown previews from VIm!
-Plug 'suan/vim-instant-markdown'
+" Markdown preview plugin for neovim
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 "
 
 call plug#end()
@@ -180,10 +180,10 @@ autocmd FileType swift nmap <C-c> :Xclean<CR>
 
 " }}}
 
-" suan/vim-instant-markdown {{{
+" iamcco/markdown-preview.nvim {{{
 "
-" Disable instant refresh
-let g:instant_markdown_slow = 1
+" Preview markdown file on open
+let g:mkdp_auto_start = 1
 " }}}
 
 " 'itchyny/lightline.vim' {{{
