@@ -33,6 +33,12 @@ Plug 'vim-utils/vim-interruptless'
 " Run your tests at the speed of thought
 Plug 'janko-m/vim-test'
 
+"
+" Colorschemes
+"
+
+Plug 'AlessandroYorba/Sierra'
+
 
 "
 " Swift
@@ -74,8 +80,8 @@ call plug#end()
 " GENERAL SETTINGS
 "
 
-" Set font to Apple San Francisco Mono spaced
-set guifont=SF-Mono-Regular\ 14
+" Set colorscheme 
+colorscheme sierra
 " Display line numbers of the left margin.
 set number
 " Display relative (to current one) line numbers on margin.
@@ -97,7 +103,7 @@ set tabstop=4
 " Set column on 80th char lenght.
 set colorcolumn=80
 " Color column 80th and from 120 to 900 (warning/danger zone)
-let &colorcolumn="80,".join(range(120,999),",")
+let &colorcolumn='80,'.join(range(120,999),',')
 " Set color for columns above 
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 " Highlight current line
@@ -131,8 +137,6 @@ nnoremap <silent><Leader>z :let &foldlevel = &foldlevel==0 ? &foldnestmax : 0<CR
 " PLUGIN CONFIGS
 "
 "
-" Generate docstring for current context
-autocmd Filetype swift nnoremap <silent><tab>/ :SwiftDocstringCurrent<CR>
 
 " szymonmaszke/vimpyter {{{
 "
@@ -158,6 +162,13 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 " }}}
 
+" witekbobrowski/vim-swiftdocstring {{{
+"
+" Generate docstring for current context
+autocmd Filetype swift nnoremap <silent><tab>/ :SwiftDocstringCurrent<CR>
+" }}}
+
+
 " landaire/deoplete-swift {{{
 "
 " Path to SourceKitten binary 
@@ -169,14 +180,14 @@ autocmd FileType swift imap <buffer> <C-k> <Plug>(autocomplete_swift_jump_to_pla
 " Plug 'gfontenot/vim-xcode' {{{
 "
 " 
-autocmd FileType swift imap <C-b> :Xbuild<CR>
-autocmd FileType swift nmap <C-b> :Xbuild<CR>
-autocmd FileType swift imap <C-r> :Xrun<CR>
-autocmd FileType swift nmap <C-r> :Xrun<CR>
-autocmd FileType swift imap <C-u> :Xtest<CR>
-autocmd FileType swift nmap <C-u> :Xtest<CR>
-autocmd FileType swift imap <C-c> :Xclean<CR>
-autocmd FileType swift nmap <C-c> :Xclean<CR>
+autocmd FileType swift imap <silent><tab>b :Xbuild<CR>
+autocmd FileType swift nmap <silent><tab>b :Xbuild<CR>
+autocmd FileType swift imap <silent><tab>r :Xrun<CR>
+autocmd FileType swift nmap <silent><tab>r :Xrun<CR>
+autocmd FileType swift imap <silent><tab>u :Xtest<CR>
+autocmd FileType swift nmap <silent><tab>u :Xtest<CR>
+autocmd FileType swift imap <silent><tab>c :Xclean<CR>
+autocmd FileType swift nmap <silent><tab>c :Xclean<CR>
 
 " }}}
 
