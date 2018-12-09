@@ -32,6 +32,11 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'vim-utils/vim-interruptless'
 " Run your tests at the speed of thought
 Plug 'janko-m/vim-test'
+" fzf + vim
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+" Display the indention levels with thin vertical lines
+Plug 'Yggdroot/indentLine'
 
 "
 " Colorschemes
@@ -180,13 +185,9 @@ autocmd FileType swift imap <buffer> <C-k> <Plug>(autocomplete_swift_jump_to_pla
 " Plug 'gfontenot/vim-xcode' {{{
 "
 " 
-autocmd FileType swift imap <silent><tab>b :Xbuild<CR>
 autocmd FileType swift nmap <silent><tab>b :Xbuild<CR>
-autocmd FileType swift imap <silent><tab>r :Xrun<CR>
 autocmd FileType swift nmap <silent><tab>r :Xrun<CR>
-autocmd FileType swift imap <silent><tab>u :Xtest<CR>
 autocmd FileType swift nmap <silent><tab>u :Xtest<CR>
-autocmd FileType swift imap <silent><tab>c :Xclean<CR>
 autocmd FileType swift nmap <silent><tab>c :Xclean<CR>
 
 " }}}
@@ -253,4 +254,24 @@ let g:lightline#ale#indicator_ok = ''
 let g:gitgutter_terminal_reports_focus=0
 let g:gitgutter_diff_base='HEAD'
 let g:gitgutter_grep = 'rg' 
+" }}}
+
+" w0rp/ale {{{
+"
+" Enable completion where available.
+" This setting must be set before ALE is loaded.
+let g:ale_completion_enabled = 1
+" }}}
+
+" junegunn/fzf.vim {{{
+"
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Default fzf layout
+" - down / up / left / right
+let g:fzf_layout = { 'left': '~20%' }
 " }}}
