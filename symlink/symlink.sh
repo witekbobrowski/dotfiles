@@ -25,4 +25,8 @@ PHOENIX=".phoenix.js"
 log "$emoji Linking $PHOENIX"
 ln -f "$DIR/$PHOENIX" "$HOME/$PHOENIX"
 
+RANGER="ranger/rc.conf"
+log "$emoji Linking $RANGER"
+ln -f "$DIR/$RANGER" "$HOME/.config/$RANGER"
+~/.config/ranger/rc.conf
 success "Done creating symbolic links!"
