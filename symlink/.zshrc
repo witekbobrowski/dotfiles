@@ -43,8 +43,10 @@ alias dsk="cd ~/Desktop"
 
 ### Programs
 alias e='nvim'
+alias g='git'
+alias r='ranger'
 alias lc='colorls'
-alias jn="jupyter notebook"
+alias jn='jupyter notebook'
 
 ### Commands
 alias pdd='rm -rf ~/Library/Developer/Xcode/DerivedData/*' # Purge DerivedData
