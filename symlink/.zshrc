@@ -49,6 +49,7 @@ alias lc='colorls'
 alias jn='jupyter notebook'
 
 ### Commands
+alias ffusb='sudo killall -STOP -c usbd' # Fix fucking usb charging by killing the process
 alias pdd='rm -rf ~/Library/Developer/Xcode/DerivedData/*' # Purge DerivedData
 alias gmc= "find . -name '*.orig' -delete" # Clean after git merge
 
