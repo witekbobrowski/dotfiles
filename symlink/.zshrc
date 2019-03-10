@@ -44,6 +44,12 @@ alias dsk="cd ~/Desktop"
 ### Programs
 alias e='nvim'
 alias g='git'
+alias gp='git push -u origin $(git rev-parse --abbrev-ref HEAD)'
+alias t='tmux'
+alias tls='tmux ls'
+alias tn='tmux new -s'
+alias tat='tmux attach -t'
+alias trn='tmux rename-session -t'
 alias r='ranger'
 alias lc='colorls'
 alias jn='jupyter notebook'
