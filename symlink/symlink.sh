@@ -13,6 +13,10 @@ ZSH=".zshrc"
 log "$emoji Linking $ZSH"
 ln -f "$DIR/$ZSH" "$HOME/$ZSH"
 
+TMUX=".tmux.conf"
+log "$emoji Linking $TMUX"
+ln -f "$DIR/$TMUX" "$HOME/$TMUX"
+
 NVIM="init.vim"
 log "$emoji Linking $NVIM"
 ln -f "$DIR/$NVIM" "$HOME/.config/nvim/$NVIM"
