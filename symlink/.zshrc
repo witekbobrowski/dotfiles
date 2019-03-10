@@ -7,7 +7,7 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.fastlane/bin:$PATH"
 
 # Themes https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="cobalt2"
+ZSH_THEME="spaceship"
 
 # Plugins
 plugins=(git zsh-syntax-highlighting)
