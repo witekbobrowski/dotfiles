@@ -79,6 +79,11 @@ Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 "
 
+" JavaScript 
+"
+" React JSX syntax highlighting and indenting
+Plug 'pangloss/vim-javascript'
+
 call plug#end()
 
 "
