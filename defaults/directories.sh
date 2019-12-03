@@ -27,9 +27,9 @@ create_directory_if_needed "$HOME/Developer"
 create_directory_if_needed "$HOME/Developer/personal"
 
 # Developer/work 
-create_directory_if_needed "$HOME/Developer/personal"
+create_directory_if_needed "$HOME/Developer/work"
 
 # Developer/temp 
-create_directory_if_needed "$HOME/Developer/personal"
+create_directory_if_needed "$HOME/Developer/temp"
 
 success "Done creating basic directories!"
