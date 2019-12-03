@@ -93,6 +93,6 @@ Obviously there is a lot to be done here. I will try to create `issue` for every
 - Repository structure and setup approach [eivindml](https://github.com/eivindml)
 - Some gitconfigs and macOS defaults [nicknisi](https://github.com/nicknisi)
 - Amazing set of macos defaults [kevinSuttle](https://github.com/kevinSuttle/macOS-Defaults)
-- Wallpaper by [Miranda Robson](http://www.mimirobson.tumblr.com)
+- Wallpaper by [Fabian Irsara](https://unsplash.com/photos/_SwLdgVGfVY)
 
 ✨ Thank you! ✨
