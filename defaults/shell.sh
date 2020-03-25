@@ -7,8 +7,8 @@ source "$DIR/../lib.sh"
 emoji='🐚'
 
 # Change users shell to zsh
-log "$emoji Setting default shell to zsh"
-chsh -s /bin/zsh &> /dev/null
+# log "$emoji Setting default shell to zsh"
+# chsh -s /bin/zsh &> /dev/null
 
 # Instal zsh highlighting plugin 
 log "$emoji Instal zsh highlighting plugin"
