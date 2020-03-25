@@ -4,7 +4,9 @@ export ZSH=$HOME/.oh-my-zsh
 # path
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/.fastlane/bin:$PATH"
+export FASTLANE_PATH="/usr/local/lib/ruby/gems/2.6.0/gems/fastlane-2.134.0/bin"
+export PATH="$FASTLANE_PATH:$PATH"
+source ~/.bash_profile
 
 # Themes https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="spaceship"
@@ -23,7 +25,12 @@ fi
 # Configurating thefuck
 eval $(thefuck --alias)
 
+
 # Aliases
+export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+alias java8='export JAVA_HOME=$JAVA_8_HOME'
+alias java11='export JAVA_HOME=$JAVA_11_HOME'
 
 ### Files
 alias grc="nvim ~/.gitconfig"
@@ -62,7 +69,7 @@ alias gmc= "find . -name '*.orig' -delete" # Clean after git merge
 # lc on cd
 function chpwd() {
     emulate -L zsh
-    colorls -a
+    colorls --almost-all
 }
 
 # Update all Wallpapers
