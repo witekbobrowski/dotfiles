@@ -13,8 +13,11 @@ fi
 echo "🛠 Installing homebrew apps"
 cat $DIR/Brewfile | xargs brew install
 
+echo "🛠 Tapping cask into homebrew"
+brew tap homebrew/cask
+
 echo "🛠 Installing homebrew-cask apps"
-cat $DIR/Caskfile | xargs brew cask install
+cat $DIR/Caskfile | xargs brew install
 
 echo "🛠 Installing yarn apps"
 cat $DIR/Yarnfile | xargs yarn global add

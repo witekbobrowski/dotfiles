@@ -9,12 +9,15 @@ node
 yarn
 ruby
 python3
+pyenv
 thefuck
 subliminal
 swiftlint
-carthage
 ripgrep
 lolcat
 cowsay
 cmatrix
 sourcekitten
+ranger
+youtube-dl
+mint
