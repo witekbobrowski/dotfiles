@@ -27,13 +27,14 @@
     count = shortlog -sn
 [merge]
     tool = kdiff3
+    conflictstyle = diff3
 [color "diff"]
     meta = yellow bold
     frag = magenta bold
     old = red bold
     new = green bold
-[mergetool "kdiff3"]
-    path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+; [mergetool "kdiff3"]
+;     path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
 [pager]
     diff = "diff-so-fancy | less --tabs=4 -RFX"
     show = "diff-so-fancy | less --tabs=4 -RFX"

@@ -52,4 +52,8 @@ sh "$DIR/symlink/symlink.sh"
 log "$separator"
 
 # Install apps
+
+echo "Install git lfs"
+git lfs install
+
 sh "$DIR/apps/apps.sh"

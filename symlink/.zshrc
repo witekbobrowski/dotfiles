@@ -6,7 +6,6 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export FASTLANE_PATH="/usr/local/lib/ruby/gems/2.6.0/gems/fastlane-2.134.0/bin"
 export PATH="$FASTLANE_PATH:$PATH"
-source ~/.bash_profile
 
 # Themes https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="spaceship"
@@ -25,12 +24,7 @@ fi
 # Configurating thefuck
 eval $(thefuck --alias)
 
-
-# Aliases
-export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
-export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
-alias java8='export JAVA_HOME=$JAVA_8_HOME'
-alias java11='export JAVA_HOME=$JAVA_11_HOME'
+alias pip=/usr/local/bin/pip3
 
 ### Files
 alias grc="nvim ~/.gitconfig"
@@ -60,6 +54,7 @@ alias tre='tmux rename-session -t'
 alias r='ranger'
 alias lc='colorls'
 alias jn='jupyter notebook'
+alias gc='git cim'
 
 ### Commands
 alias ffusb='sudo killall -STOP -c usbd' # Fix fucking usb charging by killing the process
@@ -77,5 +72,14 @@ function wallpaper() {
     sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$1'" && killall Dock
 }
 
+# Replace apple id mail in fastlane config
+function rfm() {
+    sed -i '' 's/^apple_id.*/apple_id "witek@bobrowski.co"/g' fastlane/Appfile
+}
+
 # Show friendly cow on new session
 clear && cowsay sup fam | lolcat
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
