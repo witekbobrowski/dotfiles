@@ -6,7 +6,7 @@
 </a>
 </p>
 <p align=center>
-    <a href=""><img alt="OS" src="https://img.shields.io/badge/macOS-Mojave-383838.svg"></a>
+    <a href=""><img alt="OS" src="https://img.shields.io/badge/macOS-Big Sur-383838.svg"></a>
     <a href=""><img alt="Shell" src="https://img.shields.io/badge/Shell-zsh-blue.svg"></a>
     <a href=""><img alt="Terminal" src="https://img.shields.io/badge/Terminal-iTerm2-dark.svg"></a>
     <a href=""><img alt="Editor" src="https://img.shields.io/badge/Editor-Neovim-green.svg"></a>
@@ -93,6 +93,5 @@ Obviously there is a lot to be done here. I will try to create `issue` for every
 - Repository structure and setup approach [eivindml](https://github.com/eivindml)
 - Some gitconfigs and macOS defaults [nicknisi](https://github.com/nicknisi)
 - Amazing set of macos defaults [kevinSuttle](https://github.com/kevinSuttle/macOS-Defaults)
-- Wallpaper by [Fabian Irsara](https://unsplash.com/photos/_SwLdgVGfVY)
 
 ✨ Thank you! ✨

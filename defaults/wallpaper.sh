@@ -10,5 +10,5 @@ emoji='🌊'
 
 # Change wallpaper
 log "$emoji Setting new wallpaper"
-sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$ASSETS_DIR/fabian-irsara.jpg'"
+sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$ASSETS_DIR/wyoming.jpg'"
 killall Dock

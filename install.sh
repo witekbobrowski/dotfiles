@@ -32,7 +32,7 @@ sh "$DIR/defaults/safari.sh"
 log "$separator"
 
 # Run script that sets the wallpaper
-sh "$DIR/defaults/wallpaper.sh"
+# sh "$DIR/defaults/wallpaper.sh"
 
 log "$separator"
 
