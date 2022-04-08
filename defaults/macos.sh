@@ -26,32 +26,32 @@ defaults write com.apple.dashboard mcx-disabled -bool true
 
 # Set the icon size of Dock items to 32 pixels
 log "$emoji Setting Dock size to 32"
-defaults write com.apple.dock tilesize -int 32
+defaults write com.apple.Dock tilesize -int 32
 
 # Disable recents section in Dock
 log "$emoji Disable recents section in Dock"
-defaults write com.apple.dock show-recents -bool false
+defaults write com.apple.Dock show-recents -bool false
 
 # Don’t show Dashboard as a Space
 log "$emoji Don’t show Dashboard as a Space"
-defaults write com.apple.dock dashboard-in-overlay -bool true
+defaults write com.apple.Dock dashboard-in-overlay -bool true
 
 # Don’t automatically rearrange Spaces based on most recent use
 log "$emoji Don’t automatically rearrange Spaces based on most recent use"
-defaults write com.apple.dock mru-spaces -bool false
+defaults write com.apple.Dock mru-spaces -bool false
 
 # Bottom left screen corner → Start screen saver
 log "$emoji Set bottom left screen corner as screen saver hotkey"
-defaults write com.apple.dock wvous-bl-corner -int 5
-defaults write com.apple.dock wvous-bl-modifier -int 0
+defaults write com.apple.Dock wvous-bl-corner -int 5
+defaults write com.apple.Dock wvous-bl-modifier -int 0
 
 # Bottom right screen corner → Put display to sleep
 log "$emoji Set bottom right screen corner as put to display to sleep hotkey"
-defaults write com.apple.dock wvous-br-corner -int 10
-defaults write com.apple.dock wvous-br-modifier -int 0
+defaults write com.apple.Dock wvous-br-corner -int 10
+defaults write com.apple.Dock wvous-br-modifier -int 0
 
 # Disable mouse acceleration
-log "$emoji Set mouse acceleration ot -1 to diable it"
+log "$emoji Set mouse acceleration to -1 to disable it"
 defaults write .GlobalPreferences com.apple.mouse.scaling -1
 
 # Done configuring macOS defaults
