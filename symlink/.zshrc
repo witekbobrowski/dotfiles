@@ -4,6 +4,7 @@ export ZSH=$HOME/.oh-my-zsh
 # path
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
 export FASTLANE_PATH="/usr/local/lib/ruby/gems/2.6.0/gems/fastlane-2.134.0/bin"
 export PATH="$FASTLANE_PATH:$PATH"
 
@@ -24,7 +25,7 @@ fi
 # Configurating thefuck
 eval $(thefuck --alias)
 
-alias pip=/usr/local/bin/pip3
+# alias pip=/usr/local/bin/pip3
 
 ### Files
 alias grc="nvim ~/.gitconfig"
@@ -46,6 +47,7 @@ alias dsk="cd ~/Desktop"
 alias e='nvim'
 alias g='git'
 alias gp='git push -u origin $(git rev-parse --abbrev-ref HEAD)'
+alias gpt='git push --tags'
 alias t='tmux'
 alias tls='tmux ls'
 alias tn='tmux new -s'
@@ -82,4 +84,3 @@ clear && cowsay sup fam | lolcat
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
-prompt spaceship

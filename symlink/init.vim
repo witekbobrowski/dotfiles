@@ -162,16 +162,16 @@ nnoremap <silent><Leader>z :let &foldlevel = &foldlevel==0 ? &foldnestmax : 0<CR
 " szymonmaszke/vimpyter {{{
 "
 "
-let g:vimpyter_color = 1
-autocmd Filetype ipynb nnoremap <silent><tab>b :VimpyterInsertPythonBlock<CR>
-autocmd Filetype ipynb nnoremap <silent><tab>j :VimpyterStartJupyter<CR>
+" let g:vimpyter_color = 1
+" autocmd Filetype ipynb nnoremap <silent><tab>b :VimpyterInsertPythonBlock<CR>
+" autocmd Filetype ipynb nnoremap <silent><tab>j :VimpyterStartJupyter<CR>
 
 " }}}
 
 " Shougo/deoplete.nvim {{{
 "
 " Path to python
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = '/opt/homebrew/bin/python3'
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 
