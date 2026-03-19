@@ -80,9 +80,14 @@ clear && cowsay sup fam | lolcat
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
-prompt spaceship
-export PATH="/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.2.0/bin:$PATH"
-alias fastlane="/opt/homebrew/lib/ruby/gems/3.2.0/bin/fastlane"
+
+# pnpm
+export PNPM_HOME="/Users/witekbobrowski/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
 
 # Added by Windsurf
 export PATH="/Users/witekbobrowski/.codeium/windsurf/bin:$PATH"

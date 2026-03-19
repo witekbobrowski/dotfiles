@@ -33,4 +33,13 @@ RANGER="ranger/rc.conf"
 log "$emoji Linking $RANGER"
 ln -f "$DIR/$RANGER" "$HOME/.config/$RANGER"
 
+CLAUDE="claude-commands"
+log "$emoji Linking $CLAUDE"
+# Create .claude directory if it doesn't exist
+mkdir -p "$HOME/.claude"
+# Remove existing commands directory if it exists
+rm -rf "$HOME/.claude/commands"
+# Create symlink for Claude commands
+ln -s "$DIR/$CLAUDE" "$HOME/.claude/commands"
+
 success "Done creating symbolic links!"
