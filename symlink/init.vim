@@ -60,7 +60,7 @@ Plug 'AlessandroYorba/Sierra'
 " Swift
 "
 " Vim plugin for generating docstrings in Swift sources
-Plug '~/Developer/personal/vim-swiftdocstring'
+Plug 'witekbobrowski/vim-swiftdocstring'
 " Vim runtime files for Swift
 Plug 'keith/swift.vim'
 " Swift code complition

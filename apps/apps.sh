@@ -7,6 +7,8 @@ which -s brew
 if [[ $? != 0 ]] ; then
   echo "🛠  Installing homebrew"
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+	echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/witekbobrowski/.zprofile
 fi
 
 # Install packages from pm-specific files

@@ -12,7 +12,11 @@ export PATH="$FASTLANE_PATH:$PATH"
 ZSH_THEME="spaceship"
 
 # Plugins
-plugins=(git zsh-syntax-highlighting)
+plugins=(
+	git 
+    zsh-syntax-highlighting
+	macos
+)
 source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
@@ -31,7 +35,6 @@ eval $(thefuck --alias)
 alias grc="nvim ~/.gitconfig"
 alias zrc="nvim ~/.zshrc"
 alias vrc="nvim ~/.config/nvim/init.vim"
-alias omz="nvim ~/.oh-my-zsh"
 
 ### Directories
 alias dev="cd ~/Developer"
@@ -69,18 +72,17 @@ function chpwd() {
     colorls --almost-all
 }
 
-# Update all Wallpapers
-function wallpaper() {
-    sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$1'" && killall Dock
-}
-
-# Replace apple id mail in fastlane config
-function rfm() {
-    sed -i '' 's/^apple_id.*/apple_id "witek@bobrowski.co"/g' fastlane/Appfile
-}
+# symlink;
+fpath=("$HOMEBREW_PREFIX/share/zsh/site-functions" $fpath)
 
 # Show friendly cow on new session
 clear && cowsay sup fam | lolcat
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
+prompt spaceship
+export PATH="/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.2.0/bin:$PATH"
+alias fastlane="/opt/homebrew/lib/ruby/gems/3.2.0/bin/fastlane"
+
+# Added by Windsurf
+export PATH="/Users/witekbobrowski/.codeium/windsurf/bin:$PATH"
