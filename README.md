@@ -1,97 +1,65 @@
 # dotfiles
 
-<p align=center>
-<a href="">
-<img alt="screenshot" src="https://user-images.githubusercontent.com/18266391/70084032-dad50180-160d-11ea-9553-766737b4d054.png">
-</a>
-</p>
-<p align=center>
-    <a href=""><img alt="OS" src="https://img.shields.io/badge/macOS-Big Sur-383838.svg"></a>
-    <a href=""><img alt="Shell" src="https://img.shields.io/badge/Shell-zsh-blue.svg"></a>
-    <a href=""><img alt="Terminal" src="https://img.shields.io/badge/Terminal-iTerm2-dark.svg"></a>
-    <a href=""><img alt="Editor" src="https://img.shields.io/badge/Editor-Neovim-green.svg"></a>
-    <a href=""><img alt="PM" src="https://img.shields.io/badge/PM-Homebrew-yellow.svg"></a>
-</p>
+Personal macOS dotfiles, built agentic-coding first. The AI layer is the centerpiece; the classic shell/editor/window-manager configuration exists to support it.
 
-> Please note that this repository is still in its early stages. The best is yet to come...
+## AI layer
 
-## About
+The main session runs on **Fable**, which handles planning, task decomposition, and reviewing results rather than doing bulk reading or writing itself. `scout` (Haiku) is dispatched for reconnaissance — searching, reading files, answering "where is X / how does Y work" questions. `implementer` (Sonnet) picks up anything that clearly needs code written once the approach is decided: edits, new files, refactors, mechanical migrations. `codex` and `codex-reviewer` wrap the locally installed OpenAI Codex CLI for, respectively, self-contained one-shot tasks and cross-vendor review of a finished diff — a second model family catches blind spots same-family review misses. The rule of thumb is an escalation ladder: start with the cheapest capable agent and move up only on a concrete failure signal (tests fail, the worker reports being stuck, review turns up a real problem) — never on vague dissatisfaction with style.
 
-The urge to create this repository has been with me for quite a while, and I have finally decided to do it after I have recieved MacBook from the company I started working for. I found myself in this awkward situation where I had to manually copy my config files from my workstation at home for git and zsh, not to mention the amount of installed apps with brew, MacAppStore etc. So I quickly gathered few files in one directory, ran `git init` and pushed it to private repository.
+| Agent | Model | Role |
+|---|---|---|
+| `scout` | Haiku | Reconnaissance and search |
+| `implementer` | Sonnet | Writes code — edits, refactors, new files |
+| `codex` | OpenAI Codex CLI | Self-contained, one-shot tasks |
+| `codex-reviewer` | OpenAI Codex CLI | Cross-vendor review of a finished diff |
 
-Fast forward to early 2018, after seeing so many great dotfile-repositories I have decided to do something with this one and improve it the best way I can.
+Three slash commands live alongside the agents:
 
-During the development of this repository I have been highly inspired by the following gems:
+- `/commit` — stages and commits changes, matching the repo's detected commit message conventions.
+- `/create-pr` — opens a pull request with a title and description that follow the repo's PR conventions (template, title style, linked issues).
+- `/review-pr-comments` — reads all PR review feedback, critically triages each comment into accept/reject/discuss, implements only what's genuinely worth doing, and replies to every comment with the reasoning.
 
-- 💠 [eivindml/dotfiles](https://github.com/eivindml/dotfiles)
-- 💎 [nicknisi/dotfiles](https://github.com/nicknisi/dotfiles)
+Everything under `ai/claude/` (`CLAUDE.md`, `agents/`, `commands/`) is symlinked into `~/.claude/` by `symlink/symlink.sh`, so the entire AI setup — prompts, agent definitions, and commands — is versioned in this repo, not scattered in the home directory.
 
-... and the [r/unixporn](https://www.reddit.com/r/unixporn/)
+## Classic layer
 
-This configuration runs on the following machines:
+- **Shell**: zsh, oh-my-zsh, Spaceship prompt
+- **Editor**: Neovim
+- **Multiplexer**: tmux
+- **Git**: standard gitconfig plus `diff-so-fancy` for readable diffs
+- **Terminal**: iTerm2
+- **Window management**: Phoenix
+- **File browser**: ranger
 
-- 🖥 **5K iMac** `27'` `Late 2014` `4 GHz i7` `8 GB 1600 MHz DDR3` `R9 M295X`
-- 💻 **MacBook Air** `13'` `Early 2015` `1.6 GHz i5` `8 GB 1600 MHz DDR3` `Intel HD 1600`
+Package manifests (Homebrew, Cask, Mac App Store, gem, yarn) live in `apps/`. macOS system preference scripts live in `defaults/`.
 
-## Usage
-
-#### 👨🏻‍💻 Automated
-
-The most convenient way of applying this configuration to your system is to simply run the attached installation script `install.sh`.
-
-```
-$ ./install.sh
-```
-
-**`[!] Caution`** This will automatically override your configuration and install all the applications listed in `/apps` directory. So for better control over what is going on I recommend the latter option.
-
-This is basically for me only for fast updating it on my systems but if you really feel like doing it, just beware of the consequences of losing your configuration.
-
-#### 👷🏻‍ Manual
-
-This is much more safer way for anyone trying to use these configs. So just manually copy either whole file or some parts of it to your own ones.
-
-For apps on the other hand, just look for what you really need and then install them using brew etc.
-
-## Contents
+## Repo layout
 
 ```
 .
-├── README.md
-├── install.sh
-├── lib.sh
-├── apps
-│   ├── Brewfile
-│   ├── Caskfile
-│   ├── Gemfile
-│   ├── Masfile
-│   ├── Yarnfile
-│   └── apps.sh
-├── assets
-│   ├── mimirobson.png
-│   └── screenshot.png
-├── defaults
-│   ├── directories.sh
-│   ├── iterm2.sh
-│   ├── macos.sh
-│   ├── photos.sh
-│   ├── safari.sh
-│   ├── shell.sh
-│   ├── transmission.sh
-│   └── wallpaper.sh
-└── symlink
-    ├── com.googlecode.iterm2.plist
-    ├── init.vim
-    └── symlink.sh
+├── ai/                 # Versioned Claude Code configuration
+│   └── claude/
+│       ├── CLAUDE.md       # Global instructions for the main session
+│       ├── agents/         # scout, implementer, codex, codex-reviewer
+│       └── commands/       # /commit, /create-pr, /review-pr-comments
+├── symlink/            # Dotfile sources + the symlink script
+│   └── symlink.sh          # Links everything into $HOME / ~/.claude
+├── apps/               # Brewfile, Caskfile, Masfile, Gemfile, Yarnfile
+├── defaults/           # macOS defaults scripts (shell, macos, safari, ...)
+├── lib.sh              # Logging helpers shared by the top-level scripts
+└── install.sh          # Top-level installer
 ```
 
-Obviously there is a lot to be done here. I will try to create `issue` for every major feature or task that I want to implement in the future.
+## Install
 
-## Credits
+```
+./install.sh
+```
 
-- General guidance and support on ricing award goes to my buddy [vyzyv](https://github.com/vyzyv)
-- Repository structure and setup approach [eivindml](https://github.com/eivindml)
-- Some gitconfigs and macOS defaults [nicknisi](https://github.com/nicknisi)
-- Amazing set of macos defaults [kevinSuttle](https://github.com/kevinSuttle/macOS-Defaults)
+**Warning**: this overwrites existing configuration files and symlinks in your home directory without prompting. Read `install.sh` first if you're not running this on a fresh machine.
 
-✨ Thank you! ✨
+Each script under `defaults/` and `symlink/symlink.sh` can also be run standalone if you only want a subset of the setup.
+
+## History
+
+Started in 2018, inspired by [eivindml/dotfiles](https://github.com/eivindml/dotfiles) and [nicknisi/dotfiles](https://github.com/nicknisi/dotfiles). Credit to [vyzyv](https://github.com/vyzyv) for general guidance on the setup, [eivindml](https://github.com/eivindml) for the repository structure, [nicknisi](https://github.com/nicknisi) for gitconfig and macOS defaults ideas, and [kevinSuttle](https://github.com/kevinSuttle/macOS-Defaults) for the macOS defaults reference. Redesigned in 2026 around agentic coding.

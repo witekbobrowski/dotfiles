@@ -1,6 +1,7 @@
 #!/bin/bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
+AI_DIR="$( cd "$DIR/../ai" && pwd)"
 # shellcheck source=../lib.sh
 source "$DIR/../lib.sh"
 
@@ -33,24 +34,24 @@ RANGER="ranger/rc.conf"
 log "$emoji Linking $RANGER"
 ln -f "$DIR/$RANGER" "$HOME/.config/$RANGER"
 
-CLAUDE="claude-commands"
+CLAUDE="claude/commands"
 log "$emoji Linking $CLAUDE"
 # Create .claude directory if it doesn't exist
 mkdir -p "$HOME/.claude"
 # Remove existing commands directory if it exists
 rm -rf "$HOME/.claude/commands"
 # Create symlink for Claude commands
-ln -s "$DIR/$CLAUDE" "$HOME/.claude/commands"
+ln -s "$AI_DIR/$CLAUDE" "$HOME/.claude/commands"
 
 CLAUDE_MD="claude/CLAUDE.md"
 log "$emoji Linking $CLAUDE_MD"
-ln -sf "$DIR/$CLAUDE_MD" "$HOME/.claude/CLAUDE.md"
+ln -sf "$AI_DIR/$CLAUDE_MD" "$HOME/.claude/CLAUDE.md"
 
 CLAUDE_AGENTS="claude/agents"
 log "$emoji Linking $CLAUDE_AGENTS"
 # Remove existing agents directory if it exists
 rm -rf "$HOME/.claude/agents"
 # Create symlink for Claude agent definitions
-ln -s "$DIR/$CLAUDE_AGENTS" "$HOME/.claude/agents"
+ln -s "$AI_DIR/$CLAUDE_AGENTS" "$HOME/.claude/agents"
 
 success "Done creating symbolic links!"
