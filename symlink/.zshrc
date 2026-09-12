@@ -90,4 +90,9 @@ esac
 # pnpm end
 
 # Added by Windsurf
-export PATH="/Users/witekbobrowski/.codeium/windsurf/bin:$PATH"
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
+
+# Added by the Sentry CLI installer
+export PATH="$HOME/.sentry/bin:$PATH"
+fpath=("$HOME/.local/share/zsh/site-functions" $fpath)
+export PATH="$HOME/.local/bin:$PATH"
