@@ -15,13 +15,22 @@ This configuration runs on the following machines:
 
 ## Usage
 
-On a fresh Mac, clone this repository and the [skills](https://github.com/witekbobrowski/skills) one next to each other, then run the installer:
+Install [Claude Code](https://claude.com/claude-code) or [Codex](https://github.com/openai/codex), clone this repository, open a session inside it and paste:
+
+```
+Set this Mac up from these dotfiles. Clone github.com/witekbobrowski/skills
+next to this repo if it is not there, run ./install.sh, fix whatever fails
+along the way, and finish by checking that every symlink it creates resolves
+and that both ~/.claude/skills and ~/.agents/skills list the skills.
+```
+
+The script alone works too, it just will not fix anything for you:
 
 ```
 $ ./install.sh
 ```
 
-It applies the macOS defaults, links the dotfiles and agent config into `$HOME`, and installs every app from the manifests. It overwrites whatever config you already have, so this is really meant for my own machines. If you are someone else, copy the parts you like instead.
+It overwrites whatever config you already have, so this is really meant for my own machines. If you are someone else, copy the parts you like instead.
 
 ## Contents
 
