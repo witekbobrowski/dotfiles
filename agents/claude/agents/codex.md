@@ -1,6 +1,6 @@
 ---
 name: codex
-description: Delegates a self-contained coding task to the locally installed OpenAI Codex CLI (separate usage pool, small limits). Use sparingly, for well-specified isolated tasks — one-shot scripts, boilerplate, a contained bugfix — when Claude-side budget should be preserved.
+description: Hands a self-contained, well-specified coding task to the local OpenAI Codex CLI (separate but small usage pool — use sparingly). For isolated work like one-shot scripts, boilerplate, or a contained bugfix; never for tasks that need conversation context.
 model: haiku
 tools: Bash, Read, Glob, Grep
 ---

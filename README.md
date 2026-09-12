@@ -32,9 +32,9 @@ The setup follows one rule: **the expensive model plans, the cheap models work**
 | 📦 `codex` | Codex CLI | Self-contained one-shot tasks, on a separate usage pool |
 | 🧐 `codex-reviewer` | Codex CLI | Cross-vendor review — a second model family catches what the first one misses |
 
-On top of that, three slash commands: `/commit`, `/create-pr` and `/review-pr-comments` — so the boring parts of shipping follow my conventions without me spelling them out every time.
+On top of that, the shipping chores — `commit`, `create-pr`, `review-pr-comments` — are skills, so the boring parts follow my conventions without me spelling them out every time. They live in a separate [skills](https://github.com/witekbobrowski/skills) repo alongside the iOS skills, and both Claude Code and Codex pick them up.
 
-All of it lives in `ai/claude/` and gets symlinked into `~/.claude/` by `symlink/symlink.sh`. The whole brain is versioned right here, not scattered around the home directory.
+All of it lives in `agents/claude/` and gets symlinked into `~/.claude/` by `symlink/symlink.sh`. Skills are symlinked in from `../skills` instead — a sibling repo, not a subdirectory here. The whole brain is versioned right here (or right next door), not scattered around the home directory.
 
 ## The classics
 
@@ -64,11 +64,11 @@ The much safer way for anyone else: cherry-pick. Copy whole files or just the pa
 ├── CLAUDE.md          # instructions for agents working on this repo
 ├── install.sh
 ├── lib.sh
-├── ai
+├── agents
 │   └── claude
 │       ├── CLAUDE.md      # global instructions for the main session
 │       ├── agents         # scout, implementer, codex, codex-reviewer
-│       └── commands       # /commit, /create-pr, /review-pr-comments
+│       └── (skills)       # symlinked from ../skills, a separate repo
 ├── apps
 │   ├── Brewfile
 │   ├── Caskfile

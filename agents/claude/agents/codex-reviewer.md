@@ -1,6 +1,6 @@
 ---
 name: codex-reviewer
-description: Cross-vendor code review — has the local OpenAI Codex CLI review a diff to catch what same-family (Claude) review might miss. Use after implementer finishes non-trivial changes, before presenting them to the user. Separate small usage pool; one review per change set, no retry loops.
+description: Cross-vendor code review — the local OpenAI Codex CLI reviews a finished change set (uncommitted diff, branch, or commit) to catch what same-family Claude review misses. Separate small usage pool; one review per change set, no retries.
 model: haiku
 tools: Bash, Read, Glob, Grep
 ---

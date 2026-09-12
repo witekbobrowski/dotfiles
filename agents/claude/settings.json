@@ -1,0 +1,13 @@
+{
+  "model": "claude-fable-5-1[1m]",
+  "disableClaudeAiConnectors": true,
+  "enableArtifact": false,
+  "enabledPlugins": {
+    "swift-lsp@claude-plugins-official": true,
+    "figma@claude-plugins-official": false
+  },
+  "tui": "fullscreen",
+  "skipDangerousModePermissionPrompt": true,
+  "autoCompactEnabled": true,
+  "agentPushNotifEnabled": true
+}
