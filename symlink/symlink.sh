@@ -54,9 +54,55 @@ else
   link_skills "$HOME/.agents/skills"
 fi
 
-CLAUDE_MD="claude/CLAUDE.md"
-log "$emoji Linking $CLAUDE_MD"
-ln -sf "$AGENTS_DIR/$CLAUDE_MD" "$HOME/.claude/CLAUDE.md"
+log "$emoji Linking AGENTS.md"
+ln -sf "$AGENTS_DIR/AGENTS.md" "$HOME/.claude/CLAUDE.md"
+
+mkdir -p "$HOME/.codex"
+ln -sf "$AGENTS_DIR/AGENTS.md" "$HOME/.codex/AGENTS.md"
+
+CODEX_ROLE_CONFIGS="codex"
+log "$emoji Linking codex role configs"
+ln -sf "$AGENTS_DIR/$CODEX_ROLE_CONFIGS/scout.config.toml" "$HOME/.codex/scout.config.toml"
+ln -sf "$AGENTS_DIR/$CODEX_ROLE_CONFIGS/implementer.config.toml" "$HOME/.codex/implementer.config.toml"
+
+write_codex_config() {
+  local versioned="$AGENTS_DIR/codex/config.toml"
+  local target="$HOME/.codex/config.toml"
+  local tmp
+
+  if [ ! -f "$versioned" ]; then
+    error "$emoji Missing $versioned, leaving $target untouched"
+    return 1
+  fi
+
+  tmp="$(mktemp)" || return 1
+  cat "$versioned" > "$tmp"
+
+  if [ -f "$target" ]; then
+    local projects_start
+    projects_start="$(awk '/^\[projects\./{print NR; exit}' "$target")"
+    if [ -n "$projects_start" ]; then
+      {
+        echo ""
+        echo "# Machine-local below this line (written by Codex, not versioned)"
+        tail -n "+$projects_start" "$target"
+      } >> "$tmp"
+    fi
+  fi
+
+  # Anything Codex wrote above its [projects.*] block (e.g. a model picked in
+  # the TUI) is intentionally dropped: the versioned file is the source of truth.
+  if mv "$tmp" "$target"; then
+    log "$emoji Wrote $target"
+  else
+    error "$emoji Could not write $target"
+    rm -f "$tmp"
+    return 1
+  fi
+}
+
+log "$emoji Writing codex config"
+write_codex_config
 
 CLAUDE_SETTINGS="claude/settings.json"
 log "$emoji Linking $CLAUDE_SETTINGS"

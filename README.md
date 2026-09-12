@@ -20,8 +20,9 @@ Install [Claude Code](https://claude.com/claude-code) or [Codex](https://github.
 ```
 Set this Mac up from these dotfiles. Clone github.com/witekbobrowski/skills
 next to this repo if it is not there, run ./install.sh, fix whatever fails
-along the way, and finish by checking that every symlink it creates resolves
-and that both ~/.claude/skills and ~/.agents/skills list the skills.
+along the way, and finish by checking that every symlink it creates resolves,
+that ~/.claude/CLAUDE.md and ~/.codex/AGENTS.md point at the same file, and
+that both ~/.claude/skills and ~/.agents/skills list the skills.
 ```
 
 The script alone works too, it just will not fix anything for you:
@@ -40,7 +41,7 @@ It overwrites whatever config you already have, so this is really meant for my o
 ├── defaults        # macOS `defaults write` scripts
 ├── symlink         # dotfiles and the script that links them into $HOME
 ├── apps            # Homebrew, Cask, Mac App Store, gem and yarn manifests
-└── agents          # Claude Code config, linked into ~/.claude
+└── agents          # Claude Code and Codex config, linked into ~/.claude and ~/.codex
 ```
 
 ## Credits

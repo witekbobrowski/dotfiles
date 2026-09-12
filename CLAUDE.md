@@ -2,7 +2,7 @@
 
 Personal macOS dotfiles, agentic-coding first. Four top-level areas:
 
-- `agents/` — versioned Claude Code configuration (`CLAUDE.md`, `settings.json`, `agents/`) that gets symlinked into `~/.claude/`. Skills live in the sibling repo `../skills` and are symlinked into `~/.claude/skills` and `~/.agents/skills`.
+- `agents/` — versioned config for both harnesses, symlinked into `~/.claude/` and `~/.codex/`. `AGENTS.md` is the shared instructions file, symlinked to both `~/.claude/CLAUDE.md` and `~/.codex/AGENTS.md`. `claude/` holds Claude Code's config (`settings.json`, `agents/`). `codex/` holds Codex's config (`config.toml`, per-role `scout.config.toml`/`implementer.config.toml`); `~/.codex/config.toml` is *generated*, not symlinked, because Codex mutates it at runtime (appending `[projects.*]` trust entries) and a symlink into the repo would let that machine-local state leak into version control. Skills live in the sibling repo `../skills` and are symlinked into `~/.claude/skills` and `~/.agents/skills`.
 - `symlink/` — symlink scripts, non-AI dotfile sources (`.zshrc`, `.tmux.conf`, `.gitconfig`, `.phoenix.js`, `init.vim`, iTerm2 plist, ranger config), and `symlink.sh`.
 - `apps/` — Homebrew, Cask, Mac App Store, gem, and yarn manifests plus the install script for them.
 - `defaults/` — macOS `defaults write` scripts (shell, macOS, Safari, Photos, iTerm2, Transmission, directories, wallpaper).

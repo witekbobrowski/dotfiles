@@ -1,0 +1,14 @@
+project_doc_fallback_filenames = ["CLAUDE.md"]
+
+# Per-role model/sandbox/instruction overrides live in sibling config_file
+# layers (scout.config.toml, implementer.config.toml) — the [agents.<name>]
+# table itself only supports `description` and `config_file` per the Codex
+# config reference.
+
+[agents.scout]
+description = "Cheap read-only worker for searching, locating code, reading files, and summarizing. Use for any \"find where X is / what does Y look like\" question instead of reading files in the main loop."
+config_file = "scout.config.toml"
+
+[agents.implementer]
+description = "Mid-tier worker that implements a well-specified coding task — edits, new files, refactors, tests. Use whenever the plan is already decided and the remaining work is writing the code."
+config_file = "implementer.config.toml"
