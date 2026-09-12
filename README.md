@@ -1,92 +1,39 @@
 # dotfiles
 
 <p align=center>
-<a href="">
-<img alt="screenshot" src="https://user-images.githubusercontent.com/18266391/70084032-dad50180-160d-11ea-9553-766737b4d054.png">
-</a>
+<img alt="Mac Studio with a hello pin" src="assets/mac-studio-hello.jpg">
 </p>
-<p align=center>
-    <a href=""><img alt="OS" src="https://img.shields.io/badge/macOS-Tahoe-383838.svg"></a>
-    <a href=""><img alt="Shell" src="https://img.shields.io/badge/Shell-zsh-blue.svg"></a>
-    <a href=""><img alt="Terminal" src="https://img.shields.io/badge/Terminal-iTerm2-dark.svg"></a>
-    <a href=""><img alt="Editor" src="https://img.shields.io/badge/Editor-Neovim-green.svg"></a>
-    <a href=""><img alt="Agent" src="https://img.shields.io/badge/Agent-Claude-orange.svg"></a>
-</p>
-
-> Please note that this repository is no longer in its early stages. The best, apparently, has arrived — and it writes the code itself...
 
 ## About
 
-This repository started back in 2018, when I received a MacBook from the company I was working for and found myself manually copying config files from my workstation at home. A quick `git init` later it became the usual dotfiles affair — zsh, Neovim, tmux, a pile of brew manifests — patiently maintained and occasionally riced.
+This is the setup I build iOS apps with in 2026, kept in sync between a Mac Studio on the desk and a MacBook Air in the bag. The shell and macOS side has been here since 2018. What is new is the `agents/` directory: most of my code now goes through Claude Code and Codex, so their global instructions, settings and subagents are versioned here next to everything else, and the skills they share live in a separate [repository](https://github.com/witekbobrowski/skills). Clone both, run the install script, and either Mac ends up as the one in the photo.
 
-Fast forward to 2026 and the way I write code has completely changed. Most days I am not typing into the editor — I am directing agents that do. So the repo got redesigned to reflect that: the AI configuration is no longer buried in a subdirectory like some `.plist` file, it is the headline act. Everything else is here to support it.
+This configuration runs on the following machines:
 
-## AI first
-
-The setup follows one rule: **the expensive model plans, the cheap models work**. The main Claude session runs on Fable and does the thinking — planning, decomposition, reviewing results. The labor is dispatched down the ladder:
-
-| Agent | Model | Job |
-|---|---|---|
-| 🔍 `scout` | Haiku | Reconnaissance — find things, read things, report back |
-| 🔨 `implementer` | Sonnet | Write the actual code once the approach is decided |
-| 📦 `codex` | Codex CLI | Self-contained one-shot tasks, on a separate usage pool |
-| 🧐 `codex-reviewer` | Codex CLI | Cross-vendor review — a second model family catches what the first one misses |
-
-On top of that, the shipping chores — `commit`, `create-pr`, `review-pr-comments` — are skills, so the boring parts follow my conventions without me spelling them out every time. They live in a separate [skills](https://github.com/witekbobrowski/skills) repo alongside the iOS skills, and both Claude Code and Codex pick them up.
-
-All of it lives in `agents/claude/` and gets symlinked into `~/.claude/` by `symlink/symlink.sh`. Skills are symlinked in from `../skills` instead — a sibling repo, not a subdirectory here. The whole brain is versioned right here (or right next door), not scattered around the home directory.
-
-## The classics
-
-The supporting cast, mostly unchanged since the ricing days: zsh with oh-my-zsh and Spaceship, Neovim, tmux, iTerm2, Phoenix for window management, ranger for browsing files, `diff-so-fancy` for git diffs. App manifests (brew, cask, mas, gem, yarn) live in `apps/`, macOS preference scripts in `defaults/`.
+- 🖥 **Mac Studio** `M1 Ultra` `64 GB`
+- 💻 **MacBook Air** `14"` `M2`
 
 ## Usage
 
-#### 👨🏻‍💻 Automated
-
-The most convenient way of applying this configuration to your system is to simply run the attached installation script `install.sh`.
+On a fresh Mac, clone this repository and the [skills](https://github.com/witekbobrowski/skills) one next to each other, then run the installer:
 
 ```
 $ ./install.sh
 ```
 
-**`[!] Caution`** This will automatically override your configuration and install all the applications listed in `/apps` directory. This is basically for me only, for fast updating my own systems — if you really feel like running it, beware of the consequences of losing your configuration.
-
-#### 👷🏻‍ Manual
-
-The much safer way for anyone else: cherry-pick. Copy whole files or just the parts you like, and install only the apps you actually need.
+It applies the macOS defaults, links the dotfiles and agent config into `$HOME`, and installs every app from the manifests. It overwrites whatever config you already have, so this is really meant for my own machines. If you are someone else, copy the parts you like instead.
 
 ## Contents
 
 ```
 .
-├── README.md
-├── CLAUDE.md          # instructions for agents working on this repo
-├── install.sh
-├── lib.sh
-├── agents
-│   └── claude
-│       ├── CLAUDE.md      # global instructions for the main session
-│       ├── agents         # scout, implementer, codex, codex-reviewer
-│       └── (skills)       # symlinked from ../skills, a separate repo
-├── apps
-│   ├── Brewfile
-│   ├── Caskfile
-│   ├── Gemfile
-│   ├── Masfile
-│   ├── Yarnfile
-│   └── apps.sh
-├── defaults
-│   ├── directories.sh
-│   ├── iterm2.sh
-│   ├── macos.sh
-│   ├── photos.sh
-│   ├── safari.sh
-│   ├── shell.sh
-│   ├── transmission.sh
-│   └── wallpaper.sh
-└── symlink
-    ├── com.googlecode.iterm2.plist
-    ├── init.vim
-    └── symlink.sh
+├── install.sh      # runs everything below, in order
+├── defaults        # macOS `defaults write` scripts
+├── symlink         # dotfiles and the script that links them into $HOME
+├── apps            # Homebrew, Cask, Mac App Store, gem and yarn manifests
+└── agents          # Claude Code config, linked into ~/.claude
 ```
+
+## Credits
+
+Most of what is in here was learned from other people publishing their dotfiles on GitHub. Thank you, all of you. ✨
