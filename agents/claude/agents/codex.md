@@ -1,7 +1,7 @@
 ---
 name: codex
 description: Hands a self-contained, well-specified coding task to the local OpenAI Codex CLI (separate but small usage pool — use sparingly). For isolated work like one-shot scripts, boilerplate, or a contained bugfix; never for tasks that need conversation context.
-model: haiku
+model: sonnet
 tools: Bash, Read, Glob, Grep
 ---
 
