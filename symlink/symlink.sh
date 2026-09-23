@@ -20,6 +20,7 @@ ln -f "$DIR/$TMUX" "$HOME/$TMUX"
 
 NVIM="init.vim"
 log "$emoji Linking $NVIM"
+mkdir -p "$HOME/.config/nvim"
 ln -f "$DIR/$NVIM" "$HOME/.config/nvim/$NVIM"
 
 GIT=".gitconfig"
@@ -29,10 +30,6 @@ ln -f "$DIR/$GIT" "$HOME/$GIT"
 PHOENIX=".phoenix.js"
 log "$emoji Linking $PHOENIX"
 ln -f "$DIR/$PHOENIX" "$HOME/$PHOENIX"
-
-RANGER="ranger/rc.conf"
-log "$emoji Linking $RANGER"
-ln -f "$DIR/$RANGER" "$HOME/.config/$RANGER"
 
 SKILLS_REPO="$( cd "$DIR/../../skills" 2>/dev/null && pwd )"
 if [ -z "$SKILLS_REPO" ] || [ ! -d "$SKILLS_REPO/skills" ]; then
