@@ -1,6 +1,6 @@
 ---
 name: implementer
-description: Mid-tier worker that implements a well-specified coding task — edits, new files, refactors, tests. Use whenever the plan is already decided and the remaining work is writing the code.
+description: Mid-tier worker that implements a well-specified coding task: edits, new files, refactors, tests. Use whenever the plan is already decided and the remaining work is writing the code.
 model: sonnet
 ---
 

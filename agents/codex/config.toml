@@ -10,5 +10,5 @@ description = "Cheap read-only worker for searching, locating code, reading file
 config_file = "scout.config.toml"
 
 [agents.implementer]
-description = "Mid-tier worker that implements a well-specified coding task — edits, new files, refactors, tests. Use whenever the plan is already decided and the remaining work is writing the code."
+description = "Mid-tier worker that implements a well-specified coding task: edits, new files, refactors, tests. Use whenever the plan is already decided and the remaining work is writing the code."
 config_file = "implementer.config.toml"

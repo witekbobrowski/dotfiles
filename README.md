@@ -25,7 +25,7 @@ that ~/.claude/CLAUDE.md and ~/.codex/AGENTS.md point at the same file, and
 that both ~/.claude/skills and ~/.agents/skills list the skills.
 ```
 
-The script alone works too, it just will not fix anything for you:
+The script alone works too, but it will not fix anything for you:
 
 ```
 $ ./install.sh
