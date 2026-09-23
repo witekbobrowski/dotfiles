@@ -5,13 +5,11 @@ export ZSH=$HOME/.oh-my-zsh
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
-export FASTLANE_PATH="/usr/local/lib/ruby/gems/2.6.0/gems/fastlane-2.134.0/bin"
-export PATH="$FASTLANE_PATH:$PATH"
-# User gems from the newest Ruby (Homebrew), ahead of the stale system-Ruby 2.6 ones in /usr/local/bin
-path=($HOME/.gem/ruby/*/bin(N[-1]) $path)
+# Ruby via rbenv (manages PATH + gem shims, no hardcoded versions)
+command -v rbenv > /dev/null && eval "$(rbenv init - zsh)"
 
 # Themes https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
+# ZSH_THEME is unset on purpose: spaceship is sourced from Homebrew below
 
 # Plugins
 plugins=(
@@ -58,7 +56,6 @@ alias tls='tmux ls'
 alias tn='tmux new -s'
 alias ta='tmux attach -t'
 alias tre='tmux rename-session -t'
-alias r='ranger'
 alias lc='colorls'
 alias jn='jupyter notebook'
 alias gc='git cim'
@@ -80,8 +77,8 @@ fpath=("$HOMEBREW_PREFIX/share/zsh/site-functions" $fpath)
 # Show friendly cow on new session
 clear && cowsay sup fam | lolcat
 
-# Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
+# Set Spaceship ZSH as a prompt (installed via Homebrew, see apps/Brewfile)
+[ -f /opt/homebrew/opt/spaceship/spaceship.zsh ] && source /opt/homebrew/opt/spaceship/spaceship.zsh
 
 # pnpm
 export PNPM_HOME="/Users/witekbobrowski/Library/pnpm"

@@ -15,17 +15,20 @@ fi
 echo "🛠 Installing homebrew apps"
 cat $DIR/Brewfile | xargs brew install
 
-echo "🛠 Tapping cask into homebrew"
-brew tap homebrew/cask
 
 echo "🛠 Installing homebrew-cask apps"
-cat $DIR/Caskfile | xargs brew install
+cat $DIR/Caskfile | xargs brew install --cask
 
 echo "🛠 Installing yarn apps"
 cat $DIR/Yarnfile | xargs yarn global add
 
+echo "🛠 Installing Ruby via rbenv"
+eval "$(rbenv init - bash)"
+rbenv install --skip-existing 3.4.9
+rbenv global 3.4.9
+
 echo "🛠 Installing gem apps"
-cat $DIR/Gemfile | xargs gem install --user-install
+cat $DIR/Gemfile | xargs gem install
 
 echo "🛠  Installing MacAppStore apps"
 grep "^[^#]" $DIR/Masfile | xargs mas install
