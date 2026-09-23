@@ -2,22 +2,18 @@
 409201541
 # Keynote
 409183694
-# Slack
-803453959
 # Numbers
 409203825
-# Wipr
-1320666476 
+# Slack
+803453959
+# Wipr 2
+1662217862
 # Disk Speed Test
-425264550 
+425264550
 # Magnet
-441258766 
-# Twitter
-1482454543 
+441258766
 # CARROT Weather
 993487541
-# Geekbench 5
-1478447657
 # Apple Developer
 640199958
 # Parcel
@@ -26,5 +22,24 @@
 1111570163
 # Buildwatch for Xcode
 1523347474
-# Messenger
-1480068668
+# Bezel
+6476268685
+# Craft
+1487937127
+# Framous
+6636520519
+# GoPro Quik
+561350520
+# Hand Mirror
+1502839586
+# Helm
+6479357934
+# Hyperspace
+6739505345
+# stoic
+1312926037
+# TestFlight
+899247664
+
+# Gone from the Mac App Store: Twitter/X (1482454543), Messenger (1480068668),
+# Geekbench 5 (1478447657, Geekbench 6 is a direct download / `brew install --cask geekbench`)
