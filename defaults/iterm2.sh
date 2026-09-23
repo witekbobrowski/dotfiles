@@ -2,7 +2,7 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 REPO_DIR="$( cd "$( dirname "$DIR" )" && pwd)"
-ITERM_DIR=$REPO_DIR/misc/iterm2
+ITERM_DIR=$REPO_DIR/symlink
 
 # shellcheck source=../lib.sh
 source "$DIR/../lib.sh"
