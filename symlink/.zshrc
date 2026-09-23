@@ -7,6 +7,8 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
 export FASTLANE_PATH="/usr/local/lib/ruby/gems/2.6.0/gems/fastlane-2.134.0/bin"
 export PATH="$FASTLANE_PATH:$PATH"
+# User gems from the newest Ruby (Homebrew), ahead of the stale system-Ruby 2.6 ones in /usr/local/bin
+path=($HOME/.gem/ruby/*/bin(N[-1]) $path)
 
 # Themes https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="spaceship"

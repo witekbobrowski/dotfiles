@@ -25,7 +25,7 @@ echo "🛠 Installing yarn apps"
 cat $DIR/Yarnfile | xargs yarn global add
 
 echo "🛠 Installing gem apps"
-cat $DIR/Gemfile | xargs sudo gem install
+cat $DIR/Gemfile | xargs gem install --user-install
 
 echo "🛠  Installing MacAppStore apps"
 grep "^[^#]" $DIR/Masfile | xargs mas install
