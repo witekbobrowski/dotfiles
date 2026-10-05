@@ -16,5 +16,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # Instal zsh highlighting plugin 
 log "$emoji Instal zsh highlighting plugin"
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+PLUGIN_DIR="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+if [ -d "$PLUGIN_DIR" ]; then
+    log "$emoji zsh-syntax-highlighting already installed"
+else
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$PLUGIN_DIR"
+fi
 
