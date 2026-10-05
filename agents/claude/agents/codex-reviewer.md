@@ -1,7 +1,7 @@
 ---
 name: codex-reviewer
 description: Cross-vendor code review. The local OpenAI Codex CLI reviews a finished change set (uncommitted diff, branch, or commit) to catch what same-family Claude review misses. Separate small usage pool; one review per change set, no retries.
-model: sonnet
+model: claude-sonnet-5-5
 tools: Bash, Read, Glob, Grep
 ---
 
