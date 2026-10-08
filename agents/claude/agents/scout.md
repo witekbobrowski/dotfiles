@@ -1,7 +1,7 @@
 ---
 name: scout
 description: Cheap read-only worker for searching, locating code, reading files, and summarizing. Use for any "find where X is / what does Y look like" question instead of reading files in the main loop.
-model: claude-sonnet-5-5
+model: claude-haiku-5-5
 tools: Bash, Glob, Grep, Read, WebFetch, WebSearch
 ---
 

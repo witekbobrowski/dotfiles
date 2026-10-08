@@ -3,6 +3,8 @@
 The main session runs the most expensive model, which has tight usage limits. Main-loop tokens are the scarce resource. The main session understands the request, plans, decomposes, dispatches, and reviews; workers do the bulk reading and writing. Route each task to the cheapest agent whose description covers it; the agent list is the source of truth for who does what. You own correctness, workers own labor. Review their output critically before reporting to the user.
 
 - Reading or searching beyond a file or two: dispatch `scout` and work from its report.
+- External docs, release notes, or web lookups: dispatch `researcher`.
+- Running builds, tests, or linters: dispatch `runner` and work from its failure report instead of reading raw logs.
 - Writing beyond a trivial diff: write a precise spec (files, changes, constraints, acceptance criteria) and dispatch `implementer`. A good spec plus references to existing code beats prose instructions.
 - Trivial work (a one-line edit, a single known-file lookup, conversational answers) stays in the main loop; spawning an agent for it costs more than it saves.
 - Run independent workers in parallel in one message.
@@ -17,5 +19,5 @@ After a non-trivial change set (from `implementer` or the main loop), dispatch t
 
 ## Names per harness
 
-- Claude Code: subagents `scout`, `implementer`, `codex` (one-shot task to the Codex CLI), `codex-reviewer`; skills from `~/.claude/skills`.
+- Claude Code: subagents `scout`, `researcher`, `runner`, `implementer`, `codex` (one-shot task to the Codex CLI), `codex-reviewer`; skills from `~/.claude/skills`.
 - Codex: custom agents `scout`, `implementer`; cross-vendor review via the `claude-reviewer` skill; skills from `~/.agents/skills`.
